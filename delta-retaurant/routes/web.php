@@ -19,5 +19,7 @@ Route::get('/',[FoodController::class,"index"]);
 Route::get('/admin/foods',[FoodController::class,"show"]);
 Route::get('/admin/foods/add',[FoodController::class,"add"]);
 Route::post('/admin/foods/create',[FoodController::class,"create"]);
+Route::get('/admin/foods/{id}/update',[FoodController::class,"update"]);
+Route::put('/admin/foods/{id}/edit',[FoodController::class,"edit"]);
 
 Route::get('/admin/categories',[CategoryController::class,"show"]);

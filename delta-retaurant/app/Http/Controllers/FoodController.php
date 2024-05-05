@@ -43,4 +43,28 @@ class FoodController extends Controller
         ]);
         return redirect("/admin/foods");
     }
+    public function update(int $id){
+        $food=Food::find($id);
+        $categories=Category::all();
+        return view("admin.food.update",[
+            "food"=>$food,
+            "categories"=>$categories
+        ]);
+    }
+    public function edit(RestaurantFoodRequest $request,int $id){
+        $food=Food::find($id);
+        $title=$request->title;
+        $food_type=$request->food_type;
+        $entity=$request->entity;
+        $category_id=$request->category_id;
+        $price=$request->price;
+        $food->update([
+            "title"=>$title,
+            "food_type"=>$food_type,
+            "entity"=>$entity,
+            "category_id"=>$category_id,
+            "price"=>$price
+        ]);
+        return redirect("/admin/foods");
+    }
 }

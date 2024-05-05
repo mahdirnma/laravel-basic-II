@@ -3,6 +3,7 @@
     food
 @endsection
 @section('content')
+    <h1 style="text-align: center;font-size: 40px">غذاها</h1>
     <a href="/admin/foods/add" style="text-decoration: none;color: darkred;text-align: center;padding: 15px;border: 2px solid darkred;border-radius: 5px;font-weight: bold">افزودن غذا</a>
     <table border="1" style="margin-top: 25px">
         <thead>
@@ -21,7 +22,12 @@
         @foreach($foods as $food)
             <tr>
                 <td style="padding: 15px;text-align: center">delete</td>
-                <td style="padding: 15px;text-align: center">edit</td>
+                <td style="padding: 10px;text-align: center">
+                    <form action="/admin/foods/{{$food->id}}/update" method="get">
+                        @csrf
+                        <input type="submit" value="update" style="background-color: transparent;border: 1px solid #6b0909;color: #6b0909;border-radius: 3px;cursor: pointer;padding: 5px">
+                    </form>
+                </td>
                 <td style="padding: 15px;text-align: center">{{$food->entity}}</td>
                 <td style="padding: 15px;text-align: center">{{number_format($food->price)}}</td>
                 <td style="padding: 15px;text-align: center">

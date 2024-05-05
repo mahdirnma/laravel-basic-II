@@ -9,7 +9,7 @@
 </head>
 <body>
 <div style="display: flex;width: 100%;height: 97vh">
-    <div style="width: 80%;display: flex;flex-direction:column;align-items: center;justify-content: center">@yield('content')</div>
+    <div style="width: 80%;display: flex;flex-direction:column;align-items: center;justify-content: flex-start">@yield('content')</div>
     <nav style="background-color: rgba(162,162,162,0.57);width: 20%;height: 100%;border-radius: 20px">
         <ul style="list-style: none">
             <li style="text-align: center;font-size: 35px;font-weight: bold;margin-top: 30px"><a href="/admin/foods" style="text-decoration: none;color: black">غذاها</a></li>
