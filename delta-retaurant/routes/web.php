@@ -17,5 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[FoodController::class,"index"]);
 Route::get('/admin/foods',[FoodController::class,"show"]);
+Route::get('/admin/foods/add',[FoodController::class,"add"]);
+Route::post('/admin/foods/create',[FoodController::class,"create"]);
 
 Route::get('/admin/categories',[CategoryController::class,"show"]);

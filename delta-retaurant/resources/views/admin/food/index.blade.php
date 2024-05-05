@@ -23,7 +23,7 @@
                 <td style="padding: 15px;text-align: center">delete</td>
                 <td style="padding: 15px;text-align: center">edit</td>
                 <td style="padding: 15px;text-align: center">{{$food->entity}}</td>
-                <td style="padding: 15px;text-align: center">{{$food->price}}</td>
+                <td style="padding: 15px;text-align: center">{{number_format($food->price)}}</td>
                 <td style="padding: 15px;text-align: center">
                     @foreach($categories as $category)
                         {{$category->id==$food->category_id?$category->title:""}}
