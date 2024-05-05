@@ -25,3 +25,9 @@ Route::get('/admin/foods/{id}/delete',[FoodController::class,"delete"]);
 Route::delete('/admin/foods/remove',[FoodController::class,"remove"]);
 
 Route::get('/admin/categories',[CategoryController::class,"show"]);
+Route::get('/admin/categories/add',[CategoryController::class,"add"]);
+Route::post('/admin/categories/create',[CategoryController::class,"create"]);
+Route::get('/admin/categories/{id}/update',[CategoryController::class,"update"]);
+Route::put('/admin/categories/{id}/edit',[CategoryController::class,"edit"]);
+Route::get('/admin/categories/{id}/delete',[CategoryController::class,"delete"]);
+Route::delete('/admin/categories/remove',[CategoryController::class,"remove"]);
