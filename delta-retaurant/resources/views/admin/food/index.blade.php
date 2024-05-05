@@ -21,7 +21,12 @@
         <tbody>
         @foreach($foods as $food)
             <tr>
-                <td style="padding: 15px;text-align: center">delete</td>
+                <td style="padding: 15px;text-align: center">
+                    <form action="/admin/foods/{{$food->id}}/delete" method="get">
+                        @csrf
+                        <input type="submit" value="delete" style="background-color: transparent;border: 1px solid #09196b;color: #09196b;border-radius: 3px;cursor: pointer;padding: 5px">
+                    </form>
+                </td>
                 <td style="padding: 10px;text-align: center">
                     <form action="/admin/foods/{{$food->id}}/update" method="get">
                         @csrf

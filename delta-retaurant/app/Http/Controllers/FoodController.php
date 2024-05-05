@@ -67,4 +67,19 @@ class FoodController extends Controller
         ]);
         return redirect("/admin/foods");
     }
+    public function delete(int $id){
+        $food=Food::find($id);
+        return view("admin.food.delete",[
+            "food"=>$food
+        ]);
+    }
+
+    public function remove()
+    {
+        $id=request("id");
+        $food=Food::find($id);
+        $food->delete($id);
+        return redirect("/admin/foods");
+    }
+
 }
