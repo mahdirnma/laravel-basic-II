@@ -26,13 +26,15 @@ class DatabaseSeeder extends Seeder
              'title' => 'chicken',
              'food_type' => 'normal',
              'entity' => 'yes',
-             'category_id' => '2'
+             'category_id' => '2',
+             'price' => '2000',
          ]);
          Food::create([
              'title' => 'vegetable',
              'food_type' => 'vegan',
              'entity' => 'no',
-             'category_id' => '1'
+             'category_id' => '1',
+             'price' => '3000',
          ]);
     }
 }

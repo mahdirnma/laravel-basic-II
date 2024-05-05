@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string("food_type");
             $table->string("entity");
             $table->integer("category_id");
+            $table->integer("price");
             $table->timestamps();
         });
     }

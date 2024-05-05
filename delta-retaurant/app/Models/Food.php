@@ -12,6 +12,7 @@ class Food extends Model
         "title",
         "food_type",
         "entity",
-        "category_id"
+        "category_id",
+        "price"
     ];
 }
