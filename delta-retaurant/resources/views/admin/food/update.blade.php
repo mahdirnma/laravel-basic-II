@@ -19,8 +19,8 @@
         </select><br>
         قیمت غذا : <input type="number" name="price" id="price" value="{{$food->price}}" style="margin-top: 25px"><br>
         موجودی غذا : <select name="entity" style="margin-top: 25px">
-            <option value="yes">yes</option>
-            <option value="no">no</option>
+            <option value="yes" {{$food->entity=="yes"?"selected":""}}>yes</option>
+            <option value="no" {{$food->entity=="no"?"selected":""}}>no</option>
         </select><br>
         <input type="submit" value="update" style="margin-top: 25px;border: 1px solid #2d3748;color: #2d3748;background-color: transparent;cursor: pointer;width: 100px;height: 50px">
     </form>
