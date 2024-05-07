@@ -33,3 +33,5 @@ Route::get('/admin/categories/{id}/delete',[CategoryController::class,"delete"])
 Route::delete('/admin/categories/remove',[CategoryController::class,"remove"]);
 Route::get('/admin/foods/{id}/priceUpdate',[FoodController::class,"priceUpdate"]);
 Route::put('/admin/foods/{id}/priceEdit',[FoodController::class,"priceEdit"]);
+Route::get('/admin/foods/{id}/entityUpdate',[FoodController::class,"entityUpdate"]);
+Route::put('/admin/foods/{id}/entityEdit',[FoodController::class,"entityEdit"]);

@@ -97,5 +97,19 @@ class FoodController extends Controller
         ]);
         return redirect("/admin/foods");
     }
-
+    public function entityUpdate(int $id){
+        $food=Food::find($id);
+        return view("admin.food.entityUpdate",[
+            "food"=>$food
+        ]);
+    }
+    public function entityEdit(int $id)
+    {
+        $entity=request("entity");
+        $food=Food::find($id);
+        $food->update([
+            "entity"=>$entity
+        ]);
+        return redirect("/admin/foods");
+    }
 }

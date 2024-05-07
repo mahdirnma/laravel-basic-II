@@ -33,7 +33,13 @@
                         <input type="submit" value="update" style="background-color: transparent;border: 1px solid #6b0909;color: #6b0909;border-radius: 3px;cursor: pointer;padding: 5px">
                     </form>
                 </td>
-                <td style="padding: 15px;text-align: center">{{$food->entity}}</td>
+                <td style="padding: 15px;text-align: center">
+                    {{$food->entity}}
+                    <form action="/admin/foods/{{$food->id}}/entityUpdate" method="get">
+                        @csrf
+                        <input type="submit" value="entity update" style="background-color: transparent;border: 1px solid #6b0909;color: #6b0909;border-radius: 3px;cursor: pointer;padding: 5px">
+                    </form>
+                </td>
                 <td style="padding: 15px;text-align: center">
                     {{number_format($food->price)}}
                     <form action="/admin/foods/{{$food->id}}/priceUpdate" method="get">
