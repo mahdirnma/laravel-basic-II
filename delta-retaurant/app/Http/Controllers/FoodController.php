@@ -81,5 +81,21 @@ class FoodController extends Controller
         $food->delete($id);
         return redirect("/admin/foods");
     }
+    public function priceUpdate(int $id){
+        $food=Food::find($id);
+        return view("admin.food.priceUpdate",[
+            "food"=>$food
+        ]);
+    }
+
+    public function priceEdit(int $id)
+    {
+        $price=request("price");
+        $food=Food::find($id);
+        $food->update([
+            "price"=>$price
+        ]);
+        return redirect("/admin/foods");
+    }
 
 }
