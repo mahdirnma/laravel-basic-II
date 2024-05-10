@@ -28,19 +28,25 @@ class DatabaseSeeder extends Seeder
              'title' => 'toyota'
          ]);
          Engine::create([
-             'title' => 'l4 1.6L'
+             'title' => '1.6L'
          ]);
          Engine::create([
-             'title' => 'l4 1.8L'
+             'title' => '1.8L'
          ]);
          Car::create([
              'title' => '206',
              'brand_id' => '1',
+             'car_type' => 'hatch back',
+             'cylinder' => 'l4',
+             'price' => '300000000',
              'engine_id' => '1'
          ]);
          Car::create([
              'title' => '550',
              'brand_id' => '2',
+             'car_type' => 'sedan',
+             'cylinder' => 'l4',
+             'price' => '6000000000',
              'engine_id' => '2'
          ]);
     }

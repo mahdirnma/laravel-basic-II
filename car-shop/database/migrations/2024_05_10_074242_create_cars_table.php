@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string("title");
             $table->integer("brand_id");
+            $table->string("car_type");
+            $table->string("cylinder");
             $table->integer("engine_id");
+            $table->string("price");
             $table->timestamps();
         });
     }
