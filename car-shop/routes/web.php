@@ -18,3 +18,5 @@ Route::get('/', [CarController::class,"index"]);
 Route::get('/admin/car', [CarController::class,"show"])->name("showCar");
 Route::get('/admin/car/add', [CarController::class,"add"])->name("addCar");
 Route::post('/admin/car/create', [CarController::class,"create"])->name("createCar");
+Route::get('/admin/car/{id}/update', [CarController::class,"update"])->name("updateCar");
+Route::put('/admin/car/{id}/edit', [CarController::class,"edit"])->name("editCar");

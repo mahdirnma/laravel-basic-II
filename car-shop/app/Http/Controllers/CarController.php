@@ -34,7 +34,6 @@ class CarController extends Controller
             "engines"=>$engines
         ]);
     }
-
     public function create(ShopCarRequest $request)
     {
         $title=$request->title;
@@ -44,6 +43,35 @@ class CarController extends Controller
         $engine=$request->engine_id;
         $price=$request->price;
         Car::create([
+            "title"=>$title,
+            "brand_id"=>$brand,
+            "car_type"=>$car_type,
+            "cylinder"=>$cylinder,
+            "engine_id"=>$engine,
+            "price"=>$price
+        ]);
+        return to_route("showCar");
+    }
+    public function update(string $id)
+    {
+        $car=Car::find($id);
+        $brands=Brand::all();
+        $engines=Engine::all();
+        return view("admin.car.update",[
+            "car"=>$car,
+            "brands"=>$brands,
+            "engines"=>$engines
+        ]);
+    }
+    public function edit(ShopCarRequest $request,string $id){
+        $car=Car::find($id);
+        $title=$request->title;
+        $brand=$request->brand_id;
+        $car_type=$request->car_type;
+        $cylinder=$request->cylinder;
+        $engine=$request->engine_id;
+        $price=$request->price;
+        $car->update([
             "title"=>$title,
             "brand_id"=>$brand,
             "car_type"=>$car_type,

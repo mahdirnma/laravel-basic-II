@@ -18,13 +18,19 @@
             <th>نوع خودرو</th>
             <th>برند</th>
             <th>نام</th>
+            <th>id</th>
         </tr>
         </thead>
         <tbody>
         @foreach($cars as $car)
         <tr>
             <td>حذف</td>
-            <td>ویرایش</td>
+            <td>
+                <form action="{{route("updateCar",["id"=>$car->id])}}" method="get">
+                    @csrf
+                    <input type="submit" value="ویرایش" class="edit">
+                </form>
+            </td>
             <td>{{number_format($car->price)}}</td>
             @foreach($engines as $engine)
                 @if($engine->id==$car->engine_id)
@@ -41,6 +47,7 @@
                 @endforeach
             </td>
             <td>{{$car->title}}</td>
+            <td>{{$car->id}}</td>
         </tr>
         @endforeach
         </tbody>
