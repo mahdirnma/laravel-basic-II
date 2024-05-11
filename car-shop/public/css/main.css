@@ -95,3 +95,15 @@
     color: darkred;
     cursor: pointer;
 }
+.header .remove{
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: #00728b;
+    cursor: pointer;
+}
+.header .question{
+    margin-top: 50px;
+    font-size: 22px;
+    color: #bb3131;
+}

@@ -81,4 +81,18 @@ class CarController extends Controller
         ]);
         return to_route("showCar");
     }
+    public function delete(string $id)
+    {
+        $car=Car::find($id);
+        return view("admin.car.delete",[
+            "car"=>$car
+        ]);
+    }
+    public function remove()
+    {
+        $id=request("id");
+        $car=Car::find($id);
+        $car->delete();
+        return to_route("showCar");
+    }
 }

@@ -24,7 +24,12 @@
         <tbody>
         @foreach($cars as $car)
         <tr>
-            <td>حذف</td>
+            <td>
+                <form action="{{route("deleteCar",["id"=>$car->id])}}" method="get">
+                    @csrf
+                    <input type="submit" value="حذف" class="remove">
+                </form>
+            </td>
             <td>
                 <form action="{{route("updateCar",["id"=>$car->id])}}" method="get">
                     @csrf
