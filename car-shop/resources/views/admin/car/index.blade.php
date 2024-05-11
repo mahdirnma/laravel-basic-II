@@ -15,7 +15,7 @@
             <th>قیمت</th>
             <th>نوع موتور</th>
             <th>تعداد سیلندر</th>
-            <th>نوع ماشین</th>
+            <th>نوع خودرو</th>
             <th>برند</th>
             <th>نام</th>
         </tr>
@@ -45,4 +45,5 @@
         @endforeach
         </tbody>
     </table>
+    <a href="{{route('addCar')}}" class="add">افزودن خودرو</a>
 @endsection

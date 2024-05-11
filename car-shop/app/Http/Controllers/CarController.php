@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ShopCarRequest;
 use App\Models\Brand;
 use App\Models\Car;
 use App\Models\Engine;
@@ -23,5 +24,33 @@ class CarController extends Controller
             "brands"=>$brands,
             "engines"=>$engines
         ]);
+    }
+    public function add()
+    {
+        $brands=Brand::all();
+        $engines=Engine::all();
+        return view("admin.car.add",[
+            "brands"=>$brands,
+            "engines"=>$engines
+        ]);
+    }
+
+    public function create(ShopCarRequest $request)
+    {
+        $title=$request->title;
+        $brand=$request->brand_id;
+        $car_type=$request->car_type;
+        $cylinder=$request->cylinder;
+        $engine=$request->engine_id;
+        $price=$request->price;
+        Car::create([
+            "title"=>$title,
+            "brand_id"=>$brand,
+            "car_type"=>$car_type,
+            "cylinder"=>$cylinder,
+            "engine_id"=>$engine,
+            "price"=>$price
+        ]);
+        return to_route("showCar");
     }
 }

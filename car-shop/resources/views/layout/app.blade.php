@@ -17,7 +17,7 @@
     <nav class="navigation">
         <ul>
 
-            <li><a href="/admin/car">خودروها</a></li>
+            <li><a href="{{route("showCar")}}">خودروها</a></li>
             <li><a href="">برند ها</a></li>
             <li><a href="">دسته بندی موتورها</a></li>
         </ul>

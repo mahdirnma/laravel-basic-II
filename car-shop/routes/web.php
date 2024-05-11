@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [CarController::class,"index"]);
-Route::get('/admin/car', [CarController::class,"show"]);
+Route::get('/admin/car', [CarController::class,"show"])->name("showCar");
+Route::get('/admin/car/add', [CarController::class,"add"])->name("addCar");
+Route::post('/admin/car/create', [CarController::class,"create"])->name("createCar");

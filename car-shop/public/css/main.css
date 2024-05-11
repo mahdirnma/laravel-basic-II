@@ -45,7 +45,7 @@
 }
 .header .car-table caption{
     font-size: 25px;
-    color: darkred;
+    color: #bb3131;
     margin-bottom: 10px;
 }
 .header .car-table td,.header .car-table th{
@@ -53,4 +53,38 @@
     padding: 10px 15px;
     text-align: center;
     font-size: 20px;
+}
+.header .add{
+    text-decoration: none;
+    color: #bb3131;
+    font-size: 20px;
+    border: 1.5px solid #bb3131;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-top: 10px;
+}
+.header .add_form{
+    margin-top: 40px;
+    text-align: right;
+}
+.header .add_form>select:first-of-type{
+    margin: 20px 0;
+}
+.header .add_form>div:first-of-type{
+    margin-top: 20px;
+}
+.header .add_form>div:first-of-type>label{
+    margin-left: 10px;
+}
+.header .add_form>#price{
+    margin: 20px 0;
+}
+.header .add_form>input:last-of-type{
+    background-color: transparent;
+    border: 1px solid #bb3131;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 8px 15px;
+    color: #bb3131;
+    cursor: pointer;
 }
