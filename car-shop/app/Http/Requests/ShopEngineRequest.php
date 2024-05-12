@@ -11,7 +11,7 @@ class ShopEngineRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class ShopEngineRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "title"=>"required|min:1"
+        ];
+    }
+    public function messages()
+    {
+        return [
+            "title.required"=>"title not valid",
+            "title.min"=>"title is too short"
         ];
     }
 }

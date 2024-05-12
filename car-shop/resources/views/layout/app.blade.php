@@ -19,7 +19,7 @@
 
             <li><a href="{{route("showCar")}}">خودروها</a></li>
             <li><a href="{{route("showBrand")}}">برند ها</a></li>
-            <li><a href="">دسته بندی موتورها</a></li>
+            <li><a href="{{route("showEngine")}}">دسته بندی موتورها</a></li>
         </ul>
     </nav>
 </div>

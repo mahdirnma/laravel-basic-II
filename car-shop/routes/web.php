@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\EngineController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,12 @@ Route::prefix("admin")->group(function (){
         Route::put('/brand/{id}/edit',"edit")->name("editBrand");
         Route::get('/brand/{id}/delete',"delete")->name("deleteBrand");
         Route::delete('/brand/remove',"remove")->name("removeBrand");
+    });
+    Route::controller(EngineController::class)->group(function (){
+        Route::get('/engine',"show")->name("showEngine");
+        Route::get('/engine/add', "add")->name("addEngine");
+        Route::post('/engine/create', "create")->name("createEngine");
+
     });
 });
 
