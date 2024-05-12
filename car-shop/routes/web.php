@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CarController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,10 +16,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [CarController::class,"index"]);
-Route::get('/admin/car', [CarController::class,"show"])->name("showCar");
-Route::get('/admin/car/add', [CarController::class,"add"])->name("addCar");
-Route::post('/admin/car/create', [CarController::class,"create"])->name("createCar");
-Route::get('/admin/car/{id}/update', [CarController::class,"update"])->name("updateCar");
-Route::put('/admin/car/{id}/edit', [CarController::class,"edit"])->name("editCar");
-Route::get('/admin/car/{id}/delete', [CarController::class,"delete"])->name("deleteCar");
-Route::delete('/admin/car/remove', [CarController::class,"remove"])->name("removeCar");
+Route::prefix("admin")->group(function (){
+    Route::controller(CarController::class)->group(function (){
+        Route::get('/car',"show")->name("showCar");
+        Route::get('/car/add', "add")->name("addCar");
+        Route::post('/car/create', "create")->name("createCar");
+        Route::get('/car/{id}/update',"update")->name("updateCar");
+        Route::put('/car/{id}/edit',"edit")->name("editCar");
+        Route::get('/car/{id}/delete',"delete")->name("deleteCar");
+        Route::delete('/car/remove',"remove")->name("removeCar");
+    });
+    Route::controller(BrandController::class)->group(function (){
+        Route::get('/brand',"show")->name("showBrand");
+        Route::get('/brand/add', "add")->name("addBrand");
+        Route::post('/brand/create', "create")->name("createBrand");
+    });
+});
+
