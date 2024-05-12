@@ -30,6 +30,9 @@ Route::prefix("admin")->group(function (){
         Route::get('/brand',"show")->name("showBrand");
         Route::get('/brand/add', "add")->name("addBrand");
         Route::post('/brand/create', "create")->name("createBrand");
+        Route::get('/brand/{id}/update',"update")->name("updateBrand");
+        Route::put('/brand/{id}/edit',"edit")->name("editBrand");
+
     });
 });
 

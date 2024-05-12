@@ -28,12 +28,10 @@
 --}}
             </td>
             <td>
-{{--
-                <form action="{{route("updateCar",["id"=>$car->id])}}" method="get">
+                <form action="{{route("updateBrand",["id"=>$brand->id])}}" method="get">
                     @csrf
                     <input type="submit" value="ویرایش" class="edit">
                 </form>
---}}
             </td>
             <td>{{$brand->title}}</td>
             <td>{{$brand->id}}</td>

@@ -29,4 +29,20 @@ class BrandController extends Controller
         ]);
         return to_route("showBrand");
     }
+    public function update(string $id)
+    {
+        $brand=Brand::find($id);
+        return view("admin.brand.update",[
+            "brand"=>$brand
+        ]);
+    }
+    public function edit(ShopBrandRequest $request,string $id){
+        $brand=Brand::find($id);
+        $title=$request->title;
+        $brand->update([
+            "title"=>$title,
+        ]);
+        return to_route("showBrand");
+    }
+
 }
