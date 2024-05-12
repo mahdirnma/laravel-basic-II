@@ -30,4 +30,11 @@ class ShopCarRequest extends FormRequest
             "price"=>"required"
         ];
     }
+    public function messages()
+    {
+        return [
+            "title.required"=>"title is not valid",
+            "title.min"=>"title is too short"
+        ];
+    }
 }

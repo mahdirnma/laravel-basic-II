@@ -42,7 +42,8 @@ Route::prefix("admin")->group(function (){
         Route::post('/engine/create', "create")->name("createEngine");
         Route::get('/engine/{id}/update',"update")->name("updateEngine");
         Route::put('/engine/{id}/edit',"edit")->name("editEngine");
-
+        Route::get('/engine/{id}/delete',"delete")->name("deleteEngine");
+        Route::delete('/engine/remove',"remove")->name("removeEngine");
     });
 });
 

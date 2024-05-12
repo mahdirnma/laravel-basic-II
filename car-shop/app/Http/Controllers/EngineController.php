@@ -42,5 +42,19 @@ class EngineController extends Controller
         ]);
         return to_route("showEngine");
     }
+    public function delete(string $id)
+    {
+        $engine=Engine::find($id);
+        return view("admin.engine.delete",[
+            "engine"=>$engine
+        ]);
+    }
+    public function remove()
+    {
+        $id=request("id");
+        $engine=Engine::find($id);
+        $engine->delete();
+        return to_route("showEngine");
+    }
 
 }

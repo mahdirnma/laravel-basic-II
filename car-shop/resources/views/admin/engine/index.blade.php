@@ -20,10 +20,10 @@
         @foreach($engines as $engine)
         <tr>
             <td>
-{{--                <form action="{{route("deleteBrand",["id"=>$engine->id])}}" method="get">--}}
-{{--                    @csrf--}}
-{{--                    <input type="submit" value="حذف" class="remove">--}}
-{{--                </form>--}}
+                <form action="{{route("deleteEngine",["id"=>$engine->id])}}" method="get">
+                    @csrf
+                    <input type="submit" value="حذف" class="remove">
+                </form>
             </td>
             <td>
                 <form action="{{route("updateEngine",["id"=>$engine->id])}}" method="get">
