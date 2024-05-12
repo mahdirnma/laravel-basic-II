@@ -44,5 +44,18 @@ class BrandController extends Controller
         ]);
         return to_route("showBrand");
     }
-
+    public function delete(string $id)
+    {
+        $brand=Brand::find($id);
+        return view("admin.brand.delete",[
+            "brand"=>$brand
+        ]);
+    }
+    public function remove()
+    {
+        $id=request("id");
+        $brand=Brand::find($id);
+        $brand->delete();
+        return to_route("showBrand");
+    }
 }

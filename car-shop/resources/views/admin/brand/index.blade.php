@@ -20,12 +20,10 @@
         @foreach($brands as $brand)
         <tr>
             <td>
-{{--
-                <form action="{{route("deleteCar",["id"=>$car->id])}}" method="get">
+                <form action="{{route("deleteBrand",["id"=>$brand->id])}}" method="get">
                     @csrf
                     <input type="submit" value="حذف" class="remove">
                 </form>
---}}
             </td>
             <td>
                 <form action="{{route("updateBrand",["id"=>$brand->id])}}" method="get">
