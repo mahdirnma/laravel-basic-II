@@ -26,10 +26,10 @@
 {{--                </form>--}}
             </td>
             <td>
-{{--                <form action="{{route("updateBrand",["id"=>$engine->id])}}" method="get">--}}
-{{--                    @csrf--}}
-{{--                    <input type="submit" value="ویرایش" class="edit">--}}
-{{--                </form>--}}
+                <form action="{{route("updateEngine",["id"=>$engine->id])}}" method="get">
+                    @csrf
+                    <input type="submit" value="ویرایش" class="edit">
+                </form>
             </td>
             <td>{{$engine->title}}</td>
             <td>{{$engine->id}}</td>

@@ -40,6 +40,8 @@ Route::prefix("admin")->group(function (){
         Route::get('/engine',"show")->name("showEngine");
         Route::get('/engine/add', "add")->name("addEngine");
         Route::post('/engine/create', "create")->name("createEngine");
+        Route::get('/engine/{id}/update',"update")->name("updateEngine");
+        Route::put('/engine/{id}/edit',"edit")->name("editEngine");
 
     });
 });

@@ -27,5 +27,20 @@ class EngineController extends Controller
         ]);
         return to_route("showEngine");
     }
+    public function update(string $id)
+    {
+        $engine=Engine::find($id);
+        return view("admin.engine.update",[
+            "engine"=>$engine
+        ]);
+    }
+    public function edit(ShopEngineRequest $request,string $id){
+        $engine=Engine::find($id);
+        $title=$request->title;
+        $engine->update([
+            "title"=>$title,
+        ]);
+        return to_route("showEngine");
+    }
 
 }
