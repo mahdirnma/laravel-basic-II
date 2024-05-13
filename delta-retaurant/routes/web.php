@@ -14,24 +14,30 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/',[FoodController::class,"index"]);
-Route::get('/admin/foods',[FoodController::class,"show"]);
-Route::get('/admin/foods/add',[FoodController::class,"add"]);
-Route::post('/admin/foods/create',[FoodController::class,"create"]);
-Route::get('/admin/foods/{id}/update',[FoodController::class,"update"]);
-Route::put('/admin/foods/{id}/edit',[FoodController::class,"edit"]);
-Route::get('/admin/foods/{id}/delete',[FoodController::class,"delete"]);
-Route::delete('/admin/foods/remove',[FoodController::class,"remove"]);
+Route::prefix("admin")->group(function (){
+    Route::controller(FoodController::class)->group(function (){
+        Route::get('/foods',"show");
+        Route::get('/foods/add',"add");
+        Route::post('/foods/create',"create");
+        Route::get('/foods/{id}/update',"update");
+        Route::put('/foods/{id}/edit',"edit");
+        Route::get('/foods/{id}/delete',"delete");
+        Route::delete('/foods/remove',"remove");
 
-Route::get('/admin/categories',[CategoryController::class,"show"]);
-Route::get('/admin/categories/add',[CategoryController::class,"add"]);
-Route::post('/admin/categories/create',[CategoryController::class,"create"]);
-Route::get('/admin/categories/{id}/update',[CategoryController::class,"update"]);
-Route::put('/admin/categories/{id}/edit',[CategoryController::class,"edit"]);
-Route::get('/admin/categories/{id}/delete',[CategoryController::class,"delete"]);
-Route::delete('/admin/categories/remove',[CategoryController::class,"remove"]);
-Route::get('/admin/foods/{id}/priceUpdate',[FoodController::class,"priceUpdate"]);
-Route::put('/admin/foods/{id}/priceEdit',[FoodController::class,"priceEdit"]);
-Route::get('/admin/foods/{id}/entityUpdate',[FoodController::class,"entityUpdate"]);
-Route::put('/admin/foods/{id}/entityEdit',[FoodController::class,"entityEdit"]);
+        Route::get('/foods/{id}/priceUpdate',"priceUpdate");
+        Route::put('/foods/{id}/priceEdit',"priceEdit");
+        Route::get('/foods/{id}/entityUpdate',"entityUpdate");
+        Route::put('/foods/{id}/entityEdit',"entityEdit");
+    });
+    Route::controller(CategoryController::class)->group(function (){
+        Route::get('/categories',"show");
+        Route::get('/categories/add',"add");
+        Route::post('/categories/create',"create");
+        Route::get('/categories/{id}/update',"update");
+        Route::put('/categories/{id}/edit',"edit");
+        Route::get('/categories/{id}/delete',"delete");
+        Route::delete('/categories/remove',"remove");
+    });
+});
+
