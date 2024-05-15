@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RestaurantFoodRequest;
+use App\Http\Requests\RestaurantPriceEditRequest;
 use App\Models\Category;
 use App\Models\Food;
 use Illuminate\Http\Request;
@@ -88,9 +89,9 @@ class FoodController extends Controller
         ]);
     }
 
-    public function priceEdit(int $id)
+    public function priceEdit(RestaurantPriceEditRequest $request,int $id)
     {
-        $price=request("price");
+        $price=$request->price;
         $food=Food::find($id);
         $food->update([
             "price"=>$price

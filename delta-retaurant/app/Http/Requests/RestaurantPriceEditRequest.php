@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RestaurantFoodRequest extends FormRequest
+class RestaurantPriceEditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,19 +22,7 @@ class RestaurantFoodRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "title"=>"required|min:3|string",
-            "food_type"=>"required",
-            "category_id"=>"required|integer",
-            "price"=>"required|integer|max digits:7",
-            "entity"=>"required",
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            "title.required"=>"title is not valid",
-            "title.min"=>"title is to short"
+            "price"=>"required|integer|max digits:7"
         ];
     }
 }
