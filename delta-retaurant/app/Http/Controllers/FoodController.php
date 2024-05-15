@@ -70,9 +70,13 @@ class FoodController extends Controller
     }
     public function delete(int $id){
         $food=Food::find($id);
-        return view("admin.food.delete",[
-            "food"=>$food
-        ]);
+        if ($food==null)
+            return redirect("/admin/foods");
+        else
+            return view("admin.food.delete",[
+                "food"=>$food
+            ]);
+
     }
 
     public function remove()

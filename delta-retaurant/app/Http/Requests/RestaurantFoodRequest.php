@@ -26,7 +26,7 @@ class RestaurantFoodRequest extends FormRequest
             "food_type"=>"required",
             "category_id"=>"required|integer",
             "price"=>"required|integer|max digits:7",
-            "entity"=>"required",
+            "entity"=>"required|in:yes,no",
         ];
     }
 
