@@ -26,8 +26,8 @@ class ShopCarRequest extends FormRequest
             "brand_id"=>"required|integer",
             "car_type"=>"required",
             "cylinder"=>"required",
-            "engine_id"=>"required",
-            "price"=>"required"
+            "engine_id"=>"required|integer",
+            "price"=>"required|max_digits:6|integer"
         ];
     }
     public function messages()

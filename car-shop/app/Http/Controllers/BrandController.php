@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ShopBrandRequest;
 use App\Models\Brand;
-use App\Models\Car;
-use App\Models\Engine;
-use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
