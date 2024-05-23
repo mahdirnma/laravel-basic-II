@@ -14,13 +14,13 @@
         <div class="w-2/12 h-full bg-violet-950 rounded-s-3xl flex-col items-center py-7">
             <h1 class="text-white flex justify-center text-2xl font-medium">UNIVERSITY</h1>
             <div class="w-full h-px bg-gray-200 my-7"></div>
-            <nav class="h-1/2 w-full px-7 flex items-center">
-                <p class="text-white">Main</p>
-                <ul>
-                    <li><a href=""></a></li>
-                    <li><a href="">students</a></li>
-                    <li><a href="">professors</a></li>
-                    <li><a href="">lessons</a></li>
+            <nav class="h-1/2 w-full px-7 flex flex-col justify-center">
+                <p class="text-white font-light text-sm">Main</p>
+                <ul class="my-3">
+                    <li class="rounded-xl px-4 py-2 hover:bg-blue-400"><a href="" class="text-white pr-16 py-2.5">collegian</a></li>
+                    <li class="rounded-xl px-4 py-2 hover:bg-blue-400"><a href="" class="text-white pr-16 py-2.5">students</a></li>
+                    <li class="rounded-xl px-4 py-2 hover:bg-blue-400"><a href="" class="text-white pr-16 py-2.5">professors</a></li>
+                    <li class="rounded-xl px-4 py-2 hover:bg-blue-400"><a href="" class="text-white pr-16 py-2.5">lessons</a></li>
                 </ul>
             </nav>
         </div>
