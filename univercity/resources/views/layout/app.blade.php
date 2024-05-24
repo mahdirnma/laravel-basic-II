@@ -19,7 +19,7 @@
                 <p class="text-white font-light text-sm">Main</p>
                 <ul class="my-3">
                     <li class="rounded-xl px-4 py-2 hover:bg-blue-400"><a href="" class="text-white pr-16 py-2.5">collegians</a></li>
-                    <li class="rounded-xl px-4 py-2 hover:bg-blue-400"><a href="" class="text-white pr-16 py-2.5">students</a></li>
+                    <li class="rounded-xl px-4 py-2 hover:bg-blue-400"><a href="{{route("students")}}" class="text-white pr-16 py-2.5">students</a></li>
                     <li class="rounded-xl px-4 py-2 hover:bg-blue-400"><a href="" class="text-white pr-16 py-2.5">professors</a></li>
                     <li class="rounded-xl px-4 py-2 hover:bg-blue-400"><a href="" class="text-white pr-16 py-2.5">lessons</a></li>
                 </ul>
@@ -27,7 +27,7 @@
         </div>
         <div class="w-10/12 rounded-e-3xl">
             <div class="w-full h-20 border-b border-gray-400 px-10 flex items-center font-bold text-2xl">
-                <h2>Dashboard</h2>
+                <h2>@yield('titre')</h2>
             </div>
             @yield('content')
         </div>

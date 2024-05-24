@@ -2,5 +2,8 @@
 @section('title')
     Home
 @endsection
+@section('titre')
+    Dashboard
+@endsection
 @section('content')
 @endsection
