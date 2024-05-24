@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::get('/admin/student',[StudentController::class,"show"])->name("students");
 Route::get('/admin/student/add',[StudentController::class,"add"])->name("addStudent");
 Route::post('/admin/student/create',[StudentController::class,"create"])->name("createStudent");
+Route::get('/admin/student/{student}/update',[StudentController::class,"update"])->name("updateStudent");
+Route::put('/admin/student/{student}/edit',[StudentController::class,"edit"])->name("editStudent");
+
+

@@ -26,7 +26,11 @@
                 <td class="text-left">{{$student->firstname}} {{$student->lastname}}</td>
                 <td class="text-center">{{$student->field}}</td>
                 <td class="text-center">{{$student->semester}}</td>
-                <td class="text-center">update</td>
+                <td class="text-center">
+                    <form action="{{route("updateStudent",["student"=>$student->id])}}" method="get">
+                        <input type="submit" value="update" class="cursor-pointer text-red-900 hover:font-bold">
+                    </form>
+                </td>
                 <td class="text-center">delete</td>
             </tr>
             @endforeach

@@ -34,4 +34,26 @@ class StudentController extends Controller
         ]);
         return to_route("students");
     }
+    public function update(Student $student)
+    {
+        return view("admin.student.update",[
+            "student"=>$student
+        ]);
+    }
+    public function edit(StoreStudentRequest $request,Student $student)
+    {
+        $firstname=$request->firstname;
+        $lastname=$request->lastname;
+        $field=$request->field;
+        $semester=$request->semester;
+        $student->update([
+            "firstname"=>$firstname,
+            "lastname"=>$lastname,
+            "field"=>$field,
+            "semester"=>$semester
+        ]);
+        return to_route("students");
+    }
+
+
 }
