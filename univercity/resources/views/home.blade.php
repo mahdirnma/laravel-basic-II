@@ -1,6 +1,6 @@
 @extends('layout.app')
-@section('title')
-    Home
+@section('header')
+    <h2>Home</h2>
 @endsection
 @section('titre')
     Dashboard

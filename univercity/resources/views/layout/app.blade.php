@@ -27,7 +27,7 @@
         </div>
         <div class="w-10/12 rounded-e-3xl">
             <div class="w-full h-20 border-b border-gray-400 px-10 flex items-center font-bold text-2xl">
-                <h2>@yield('titre')</h2>
+                @yield('header')
             </div>
             @yield('content')
         </div>

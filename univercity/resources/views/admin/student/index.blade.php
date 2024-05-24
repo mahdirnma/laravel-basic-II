@@ -2,12 +2,15 @@
 @section('title')
     students
 @endsection
-@section('titre')
-    Students
+@section('header')
+    <h2>Students</h2>
+    <div class="w-11/12 h-full flex justify-end items-center">
+        <a href="{{route("addStudent")}}" class="text-lg border-2 rounded-lg border-violet-900 font-medium p-2 hover:text-gray-500">add student</a>
+    </div>
 @endsection
 @section('content')
     <div class="w-full flex items-center justify-center px-10">
-        <table class="w-full max-h-full">
+        <table class="w-full">
             <thead>
             <tr class="h-20 border-b border-neutral-400">
                 <th class="text-left ">Name</th>
