@@ -24,6 +24,13 @@
                     <p class="text-red-900">{{$err}}</p>
                 @endforeach
             @endif
+            <input type="text" name="national_code" id="national_code" value="{{$student->national_code}}" class="border rounded-md border-violet-900 text-base px-2 py-1 mb-8"> : national_code
+            <br>
+            @if($errors->has("national_code"))
+                @foreach($errors->get("national_code") as $err)
+                    <p class="text-red-900">{{$err}}</p>
+                @endforeach
+            @endif
             <select name="field" id="field" class="border rounded-md border-violet-900 text-base px-3 py-1">
                 <option value="Elementary Education" {{$student->field=='Elementary Education'?'selected':''}}>Elementary Education</option>
                 <option value="social Sciences" {{$student->field=='social Sciences'?'selected':''}}>social Sciences</option>
@@ -34,7 +41,7 @@
                     <p class="text-red-900">{{$err}}</p>
                 @endforeach
             @endif
-            <div class="w-full flex justify-end items-center mt-8">
+            <div class="w-72 flex justify-end items-center mt-8 pr-3">
                 <select name="semester" id="semester" class="border rounded-md border-violet-900 text-base px-3 py-1 text-right mr-1">
                     <option value="1" {{$student->semester==1?'selected':''}}>1</option>
                     <option value="2" {{$student->semester==2?'selected':''}}>2</option>

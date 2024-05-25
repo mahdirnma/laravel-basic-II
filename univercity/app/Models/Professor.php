@@ -11,6 +11,7 @@ class Professor extends Model
     protected $fillable=[
         "firstname",
         "lastname",
+        "national_code",
         "degree",
         "field",
         "is_active"

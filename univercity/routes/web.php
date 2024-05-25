@@ -21,5 +21,7 @@ Route::get('/admin/student/add',[StudentController::class,"add"])->name("addStud
 Route::post('/admin/student/create',[StudentController::class,"create"])->name("createStudent");
 Route::get('/admin/student/{student}/update',[StudentController::class,"update"])->name("updateStudent");
 Route::put('/admin/student/{student}/edit',[StudentController::class,"edit"])->name("editStudent");
+Route::get('/admin/student/{student}/delete',[StudentController::class,"delete"])->name("deleteStudent");
+Route::delete('/admin/student/remove',[StudentController::class,"remove"])->name("removeStudent");
 
 

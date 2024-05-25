@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("firstname");
             $table->string("lastname");
+            $table->string("national_code");
             $table->string("field");
             $table->integer("semester");
             $table->boolean("is_active")->default(true);

@@ -16,6 +16,7 @@ class StudentSeeder extends Seeder
         Student::create([
             'firstname' => 'ali',
             'lastname' => 'rezaie',
+            'national_code' => '3920785963',
             'field' => 'Elementary Education',
             'semester' => '2',
         ]);
@@ -23,6 +24,7 @@ class StudentSeeder extends Seeder
         Student::create([
             'firstname' => 'mahdi',
             'lastname' => 'ahmadi',
+            'national_code' => '3920963463',
             'field' => 'Elementary Education',
             'semester' => '6',
         ]);

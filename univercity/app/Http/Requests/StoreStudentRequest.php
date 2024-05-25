@@ -24,6 +24,7 @@ class StoreStudentRequest extends FormRequest
         return [
             "firstname"=>"required|min:2|string",
             "lastname"=>"required|min:2|string",
+            "national_code"=>"required|integer|max_digits:10",
             "field"=>"required|min:2|string",
             "semester"=>"required|integer|max:9"
         ];

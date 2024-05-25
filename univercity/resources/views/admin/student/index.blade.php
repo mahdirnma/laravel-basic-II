@@ -13,7 +13,9 @@
         <table class="w-full">
             <thead>
             <tr class="h-20 border-b border-neutral-400">
-                <th class="text-left ">Name</th>
+                <th class="text-left ">id</th>
+                <th>Name</th>
+                <th>national code</th>
                 <th>field</th>
                 <th>semester</th>
                 <th>update</th>
@@ -23,7 +25,9 @@
             <tbody>
             @foreach($students as $student)
             <tr class="w-96 h-20 border-b border-neutral-200">
-                <td class="text-left">{{$student->firstname}} {{$student->lastname}}</td>
+                <td class="text-left">{{$student->id}}</td>
+                <td class="text-center">{{$student->firstname}} {{$student->lastname}}</td>
+                <td class="text-center">{{$student->national_code}}</td>
                 <td class="text-center">{{$student->field}}</td>
                 <td class="text-center">{{$student->semester}}</td>
                 <td class="text-center">
@@ -31,7 +35,11 @@
                         <input type="submit" value="update" class="cursor-pointer text-red-900 hover:font-bold">
                     </form>
                 </td>
-                <td class="text-center">delete</td>
+                <td class="text-center">
+                    <form action="{{route("deleteStudent",["student"=>$student->id])}}" method="get">
+                        <input type="submit" value="delete" class="cursor-pointer text-amber-700 hover:font-bold">
+                    </form>
+                </td>
             </tr>
             @endforeach
             </tbody>

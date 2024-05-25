@@ -16,12 +16,14 @@ class ProfessorSeeder extends Seeder
         Professor::create([
             'firstname' => 'ali',
             'lastname' => 'zahedi',
+            'national_code' => '3900963463',
             'degree' => 'bachelor',
             'field' => 'Arabic'
         ]);
         Professor::create([
             'firstname' => 'ahmad',
             'lastname' => 'amini',
+            'national_code' => '3936963463',
             'degree' => 'master',
             'field' => 'Psychology'
         ]);

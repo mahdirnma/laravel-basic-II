@@ -10,7 +10,7 @@ class StudentController extends Controller
 {
     public static function show()
     {
-        $students=Student::all();
+        $students=Student::where("is_active",true)->get();
         return view('admin.student.index',[
             "students"=>$students
         ]);
@@ -24,11 +24,13 @@ class StudentController extends Controller
     {
         $firstname=$request->firstname;
         $lastname=$request->lastname;
+        $national_code=$request->national_code;
         $field=$request->field;
         $semester=$request->semester;
         Student::create([
             "firstname"=>$firstname,
             "lastname"=>$lastname,
+            "national_code"=>$national_code,
             "field"=>$field,
             "semester"=>$semester
         ]);
@@ -44,16 +46,31 @@ class StudentController extends Controller
     {
         $firstname=$request->firstname;
         $lastname=$request->lastname;
+        $national_code=$request->national_code;
         $field=$request->field;
         $semester=$request->semester;
         $student->update([
             "firstname"=>$firstname,
             "lastname"=>$lastname,
+            "national_code"=>$national_code,
             "field"=>$field,
             "semester"=>$semester
         ]);
         return to_route("students");
     }
-
+    public function delete(Student $student)
+    {
+        return view("admin.student.delete",[
+            "student"=>$student
+        ]);
+    }
+    public function remove(){
+        $id=request("id");
+        $student=Student::find($id);
+        $student->update([
+            "is_active"=>false
+        ]);
+        return to_route("students");
+    }
 
 }
