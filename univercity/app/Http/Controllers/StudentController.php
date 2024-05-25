@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
+    public function index()
+    {
+        return view('home');
+    }
     public static function show()
     {
         $students=Student::where("is_active",true)->get();

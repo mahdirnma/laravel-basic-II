@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,15 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/', [StudentController::class,"index"])->name("home");
+Route::prefix("admin")->group(function (){
+    Route::controller(StudentController::class)->group(function (){
+        Route::get('/student',"show")->name("students");
+        Route::get('/student/add',"add")->name("addStudent");
+        Route::post('/student/create',"create")->name("createStudent");
+        Route::get('/student/{student}/update',"update")->name("updateStudent");
+        Route::put('/student/{student}/edit',"edit")->name("editStudent");
+        Route::get('/student/{student}/delete',"delete")->name("deleteStudent");
+        Route::delete('/student/remove',"remove")->name("removeStudent");
+    });
+    Route::controller(ProfessorController::class)->group(function (){
+        Route::get('/professor',"show")->name("professors");
+        Route::get('/professor/add',"add")->name("addProfessor");
+        Route::post('/professor/create',"create")->name("createProfessor");
+    });
 });
-Route::get('/admin/student',[StudentController::class,"show"])->name("students");
-Route::get('/admin/student/add',[StudentController::class,"add"])->name("addStudent");
-Route::post('/admin/student/create',[StudentController::class,"create"])->name("createStudent");
-Route::get('/admin/student/{student}/update',[StudentController::class,"update"])->name("updateStudent");
-Route::put('/admin/student/{student}/edit',[StudentController::class,"edit"])->name("editStudent");
-Route::get('/admin/student/{student}/delete',[StudentController::class,"delete"])->name("deleteStudent");
-Route::delete('/admin/student/remove',[StudentController::class,"remove"])->name("removeStudent");
 
 
