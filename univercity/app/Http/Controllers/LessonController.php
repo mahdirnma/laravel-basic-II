@@ -61,5 +61,22 @@ class LessonController extends Controller
         ]);
         return to_route("lessons");
     }
+    public function delete(Lesson $lesson)
+    {
+        $professors=Professor::all();
+        return view("admin.lesson.delete",[
+            "lesson"=>$lesson,
+            "professors"=>$professors
+        ]);
+    }
+    public function remove(){
+        $id=request("id");
+        $lesson=Lesson::find($id);
+        $lesson->update([
+            "is_active"=>false
+        ]);
+        return to_route("lessons");
+    }
+
 
 }

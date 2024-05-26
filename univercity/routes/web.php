@@ -41,6 +41,8 @@ Route::prefix("admin")->group(function (){
         Route::post('/lesson/create',"create")->name("createLesson");
         Route::get('/lesson/{lesson}/update',"update")->name("updateLesson");
         Route::put('/lesson/{lesson}/edit',"edit")->name("editLesson");
+        Route::get('/lesson/{lesson}/delete',"delete")->name("deleteLesson");
+        Route::delete('/lesson/remove',"remove")->name("removeLesson");
     });
 });
 

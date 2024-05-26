@@ -40,7 +40,7 @@
                     </form>
                 </td>
                 <td class="text-center">
-                    <form action="{{--{{route("deleteProfessor",["professor"=>$professor->id])}}--}}" method="get">
+                    <form action="{{route("deleteLesson",["lesson"=>$lesson->id])}}" method="get">
                         <input type="submit" value="delete" class="cursor-pointer text-amber-700 hover:font-bold">
                     </form>
                 </td>
