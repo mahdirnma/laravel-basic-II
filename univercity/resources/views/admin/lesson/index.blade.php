@@ -5,7 +5,7 @@
 @section('header')
     <h2>Lessons</h2>
     <div class="w-11/12 h-full flex justify-end items-center">
-        <a href="{{--{{route("addProfessor")}}--}}" class="text-lg border-2 rounded-lg border-violet-900 font-medium p-2 hover:text-gray-500">add professor</a>
+        <a href="{{route("addLesson")}}" class="text-lg border-2 rounded-lg border-violet-900 font-medium p-2 hover:text-gray-500">add lesson</a>
     </div>
 @endsection
 @section('content')

@@ -37,6 +37,8 @@ Route::prefix("admin")->group(function (){
     });
     Route::controller(LessonController::class)->group(function (){
         Route::get('/lesson',"show")->name("lessons");
+        Route::get('/lesson/add',"add")->name("addLesson");
+        Route::post('/lesson/create',"create")->name("createLesson");
     });
 
 });
