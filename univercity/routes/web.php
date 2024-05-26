@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LessonController;
 use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,10 @@ Route::prefix("admin")->group(function (){
         Route::get('/professor/{professor}/delete',"delete")->name("deleteProfessor");
         Route::delete('/professor/remove',"remove")->name("removeProfessor");
     });
+    Route::controller(LessonController::class)->group(function (){
+        Route::get('/lesson',"show")->name("lessons");
+    });
+
 });
 
 

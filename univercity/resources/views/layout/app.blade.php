@@ -21,7 +21,7 @@
                     <li class="rounded-xl px-4 py-2 hover:bg-blue-400"><a href="" class="text-white pr-16 py-2.5">collegians</a></li>
                     <li class="rounded-xl px-4 py-2 hover:bg-blue-400"><a href="{{route("students")}}" class="text-white pr-16 py-2.5">students</a></li>
                     <li class="rounded-xl px-4 py-2 hover:bg-blue-400"><a href="{{route("professors")}}" class="text-white pr-16 py-2.5">professors</a></li>
-                    <li class="rounded-xl px-4 py-2 hover:bg-blue-400"><a href="" class="text-white pr-16 py-2.5">lessons</a></li>
+                    <li class="rounded-xl px-4 py-2 hover:bg-blue-400"><a href="{{route("lessons")}}" class="text-white pr-16 py-2.5">lessons</a></li>
                 </ul>
             </nav>
             <a href="{{route("home")}}" class="rounded-xl font-bold hover:bg-blue-400 text-white ml-7 py-2.5 pl-4 pr-28">Home</a>
