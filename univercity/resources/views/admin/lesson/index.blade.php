@@ -35,7 +35,7 @@
                     @endforeach
                 </td>
                 <td class="text-center">
-                    <form action="{{--{{route("updateProfessor",["professor"=>$professor->id])}}--}}" method="get">
+                    <form action="{{route("updateLesson",["lesson"=>$lesson->id])}}" method="get">
                         <input type="submit" value="update" class="cursor-pointer text-red-900 hover:font-bold">
                     </form>
                 </td>

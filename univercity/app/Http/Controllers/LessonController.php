@@ -39,4 +39,27 @@ class LessonController extends Controller
     ]);
     return to_route("lessons");
 }
+    public function update(Lesson $lesson)
+    {
+        $professors=Professor::all();
+        return view("admin.lesson.update",[
+            "lesson"=>$lesson,
+            "professors"=>$professors
+        ]);
+    }
+    public function edit(StoreLessonRequest $request,Lesson $lesson)
+    {
+        $title=$request->title;
+        $course=$request->course;
+        $capacity=$request->capacity;
+        $professor_id=$request->professor;
+        $lesson->update([
+            "title"=>$title,
+            "course"=>$course,
+            "capacity"=>$capacity,
+            "professor_id"=>$professor_id
+        ]);
+        return to_route("lessons");
+    }
+
 }
