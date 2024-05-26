@@ -36,6 +36,41 @@ class ProfessorController extends Controller
         ]);
         return to_route("professors");
     }
-
+    public function update(Professor $professor)
+    {
+        return view("admin.professor.update",[
+            "professor"=>$professor
+        ]);
+    }
+    public function edit(StoreProfessorRequest $request,Professor $professor)
+    {
+        $firstname=$request->firstname;
+        $lastname=$request->lastname;
+        $national_code=$request->national_code;
+        $field=$request->field;
+        $degree=$request->degree;
+        $professor->update([
+            "firstname"=>$firstname,
+            "lastname"=>$lastname,
+            "national_code"=>$national_code,
+            "field"=>$field,
+            "degree"=>$degree
+        ]);
+        return to_route("professors");
+    }
+    public function delete(Professor $professor)
+    {
+        return view("admin.professor.delete",[
+            "professor"=>$professor
+        ]);
+    }
+    public function remove(){
+        $id=request("id");
+        $professor=Professor::find($id);
+        $professor->update([
+            "is_active"=>false
+        ]);
+        return to_route("professors");
+    }
 
 }

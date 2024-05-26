@@ -29,6 +29,10 @@ Route::prefix("admin")->group(function (){
         Route::get('/professor',"show")->name("professors");
         Route::get('/professor/add',"add")->name("addProfessor");
         Route::post('/professor/create',"create")->name("createProfessor");
+        Route::get('/professor/{professor}/update',"update")->name("updateProfessor");
+        Route::put('/professor/{professor}/edit',"edit")->name("editProfessor");
+        Route::get('/professor/{professor}/delete',"delete")->name("deleteProfessor");
+        Route::delete('/professor/remove',"remove")->name("removeProfessor");
     });
 });
 

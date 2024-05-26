@@ -31,14 +31,14 @@
                 <td class="text-center">{{$professor->field}}</td>
                 <td class="text-center">{{$professor->degree}}</td>
                 <td class="text-center">
-{{--                    <form action="{{route("updateProfessor",["professor"=>$professor->id])}}" method="get">--}}
-{{--                        <input type="submit" value="update" class="cursor-pointer text-red-900 hover:font-bold">--}}
-{{--                    </form>--}}
+                    <form action="{{route("updateProfessor",["professor"=>$professor->id])}}" method="get">
+                        <input type="submit" value="update" class="cursor-pointer text-red-900 hover:font-bold">
+                    </form>
                 </td>
                 <td class="text-center">
-{{--                    <form action="{{route("deleteProfessor",["professor"=>$professor->id])}}" method="get">--}}
-{{--                        <input type="submit" value="delete" class="cursor-pointer text-amber-700 hover:font-bold">--}}
-{{--                    </form>--}}
+                    <form action="{{route("deleteProfessor",["professor"=>$professor->id])}}" method="get">
+                        <input type="submit" value="delete" class="cursor-pointer text-amber-700 hover:font-bold">
+                    </form>
                 </td>
             </tr>
             @endforeach

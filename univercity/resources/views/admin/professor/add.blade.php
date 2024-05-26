@@ -33,6 +33,8 @@
             <select name="field" id="field" class="border rounded-md border-violet-900 text-base px-3 py-1">
                 <option value="Elementary Education">Elementary Education</option>
                 <option value="social Sciences">social Sciences</option>
+                <option value="Psychology">Psychology</option>
+                <option value="Arabic">Arabic</option>
             </select> : field
             <br>
             @if($errors->has("field"))
