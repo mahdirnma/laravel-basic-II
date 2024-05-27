@@ -51,6 +51,8 @@ Route::prefix("admin")->group(function (){
         Route::post('/collegian/create',"create")->name("createCollegian");
         Route::get('/collegian/{collegian}/update',"update")->name("updateCollegian");
         Route::put('/collegian/{collegian}/edit',"edit")->name("editCollegian");
+        Route::get('/collegian/{collegian}/delete',"delete")->name("deleteCollegian");
+        Route::delete('/collegian/remove',"remove")->name("removeCollegian");
     });
 
 });

@@ -48,7 +48,7 @@
                     </form>
                 </td>
                 <td class="text-center">
-                    <form action="{{--{{route("deleteLesson",["lesson"=>$lesson->id])}}--}}" method="get">
+                    <form action="{{route("deleteCollegian",["collegian"=>$collegian->id])}}" method="get">
                         <input type="submit" value="delete" class="cursor-pointer text-amber-700 hover:font-bold">
                     </form>
                 </td>

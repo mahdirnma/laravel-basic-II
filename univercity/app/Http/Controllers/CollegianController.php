@@ -71,5 +71,25 @@ class CollegianController extends Controller
         ]);
         return to_route("collegians");
     }
+    public function delete(Collegian $collegian)
+    {
+        $professors=Professor::all();
+        $lessons=Lesson::all();
+        $students=Student::all();
+        return view("admin.collegian.delete",[
+            "collegian"=>$collegian,
+            "lessons"=>$lessons,
+            "professors"=>$professors,
+            "students"=>$students
+        ]);
+    }
+    public function remove(){
+        $id=request("id");
+        $collegian=Collegian::find($id);
+        $collegian->update([
+            "is_active"=>false
+        ]);
+        return to_route("collegians");
+    }
 
 }
