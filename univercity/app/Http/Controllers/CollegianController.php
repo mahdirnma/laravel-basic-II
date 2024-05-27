@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCollegianRequest;
 use App\Models\Collegian;
 use App\Models\Lesson;
 use App\Models\Professor;
@@ -23,5 +24,27 @@ class CollegianController extends Controller
             "students"=>$students
         ]);
     }
-
+    public function add()
+    {
+        $professors=Professor::all();
+        $lessons=Lesson::all();
+        $students=Student::all();
+        return view("admin.collegian.add",[
+            "lessons"=>$lessons,
+            "professors"=>$professors,
+            "students"=>$students
+        ]);
+    }
+    public function create(StoreCollegianRequest $request)
+    {
+        $student_id=$request->student;
+        $lesson_id=$request->lesson;
+        $professor_id=$request->professor;
+        Collegian::create([
+            "student_id"=>$student_id,
+            "lesson_id"=>$lesson_id,
+            "professor_id"=>$professor_id
+        ]);
+        return to_route("collegians");
+    }
 }
