@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CollegianController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\StudentController;
@@ -44,6 +45,11 @@ Route::prefix("admin")->group(function (){
         Route::get('/lesson/{lesson}/delete',"delete")->name("deleteLesson");
         Route::delete('/lesson/remove',"remove")->name("removeLesson");
     });
+    Route::controller(CollegianController::class)->group(function (){
+        Route::get('/collegian',"show")->name("collegians");
+
+    });
+
 });
 
 
