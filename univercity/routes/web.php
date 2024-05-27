@@ -49,6 +49,8 @@ Route::prefix("admin")->group(function (){
         Route::get('/collegian',"show")->name("collegians");
         Route::get('/collegian/add',"add")->name("addCollegian");
         Route::post('/collegian/create',"create")->name("createCollegian");
+        Route::get('/collegian/{collegian}/update',"update")->name("updateCollegian");
+        Route::put('/collegian/{collegian}/edit',"edit")->name("editCollegian");
     });
 
 });
