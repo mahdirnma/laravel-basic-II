@@ -9,7 +9,7 @@
     </div>
 @endsection
 @section('content')
-    <div class="w-full flex items-center justify-center px-10">
+    <div class="w-full flex items-start justify-center px-10 h-[500px] overflow-y-scroll">
         <table class="w-full">
             <thead>
             <tr class="h-20 border-b border-neutral-400">
@@ -20,6 +20,7 @@
                 <th>semester</th>
                 <th>update</th>
                 <th>delete</th>
+{{--                <th>I</th>--}}
             </tr>
             </thead>
             <tbody>
@@ -40,6 +41,7 @@
                         <input type="submit" value="delete" class="cursor-pointer text-amber-700 hover:font-bold">
                     </form>
                 </td>
+{{--                <td><div class="w-[2vw] h-[2vw] bg-[#22ff22] sm:bg-red-400 md:bg-blue-400 animate-pulse rounded-full"></div></td>--}}
             </tr>
             @endforeach
             </tbody>

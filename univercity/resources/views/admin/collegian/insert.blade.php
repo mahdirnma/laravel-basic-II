@@ -7,7 +7,7 @@
 @endsection
 @section('content')
     <div class="w-full h-5/6 flex justify-center py-4">
-        <form action="{{--{{route("createCollegian")}}--}}" method="post">
+        <form action="" method="post">
             @csrf
             <select name="student" id="student" class="border rounded-md border-violet-900 text-base px-3 py-1">
                 @foreach($students as $student)
@@ -31,7 +31,6 @@
                     <p class="text-red-900">{{$err}}</p>
                 @endforeach
             @endif
-{{--
             <select name="professor" id="professor" class="border rounded-md border-violet-900 text-base px-3 py-1">
                 @foreach($professors as $professor)
                     <option value="{{$professor->id}}">{{$professor->firstname}} {{$professor->lastname}}</option>
@@ -43,9 +42,8 @@
                     <p class="text-red-900">{{$err}}</p>
                 @endforeach
             @endif
---}}
             <div class="w-full flex justify-center mt-10">
-                <input type="submit" value="ADD LESSON'S PROFESSOR" class="cursor-pointer text-white bg-violet-950 rounded px-4 py-3 hover:bg-white hover:text-violet-950 border border-violet-900">
+                <input type="submit" value="ADD" class="cursor-pointer text-white bg-violet-950 rounded px-4 py-3 hover:bg-white hover:text-violet-950 border border-violet-900">
             </div>
         </form>
     </div>

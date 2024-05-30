@@ -22,8 +22,8 @@ class StoreStudentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "firstname"=>"required|min:2|string",
-            "lastname"=>"required|min:2|string",
+            "firstname"=>"required|min:2|alpha",
+            "lastname"=>"required|min:2|alpha",
             "national_code"=>"required|integer|max_digits:10",
             "field"=>"required|min:2|string",
             "semester"=>"required|integer|max:9"

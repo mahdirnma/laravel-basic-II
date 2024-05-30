@@ -83,13 +83,13 @@ class CollegianController extends Controller
             "students"=>$students
         ]);
     }
-    public function remove(){
+/*    public function remove(){
         $id=request("id");
         $collegian=Collegian::find($id);
         $collegian->update([
             "is_active"=>false
         ]);
         return to_route("collegians");
-    }
+    }*/
 
 }
