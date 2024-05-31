@@ -47,12 +47,16 @@ Route::prefix("admin")->group(function (){
     });
     Route::controller(CollegianController::class)->group(function (){
         Route::get('/collegian',"show")->name("collegians");
-        Route::get('/collegian/add',"add")->name("addCollegian");
-        Route::post('/collegian/create',"create")->name("createCollegian");
         Route::get('/collegian/{collegian}/update',"update")->name("updateCollegian");
         Route::put('/collegian/{collegian}/edit',"edit")->name("editCollegian");
         Route::get('/collegian/{collegian}/delete',"delete")->name("deleteCollegian");
         Route::delete('/collegian/remove',"remove")->name("removeCollegian");
+        Route::get('/collegian/add',"add")->name("addCollegian");
+        Route::get('/collegian/insert_lesson',"insert_lesson")->name("insertLesson");
+        Route::get('/collegian/insert_professor',"insert_professor")->name("insertProfessor");
+        Route::post('/collegian/create',"create")->name("createCollegian");
+//        Route::post('/collegian/create',"create")->name("createCollegian");
+
     });
 
 });
