@@ -104,7 +104,6 @@ class CollegianController extends Controller
     {
         $student_id=$request->student;
         $lessons=Lesson::distinct()->pluck('title');
-//        $lessons=Lesson::distinct('title')->get();
         return view("admin.collegian.insertLesson",[
             "student_id"=>$student_id,
             "lessons"=>$lessons
@@ -115,7 +114,7 @@ class CollegianController extends Controller
         $lesson_title=$request->lesson;
         $lessons=Lesson::where("title",$lesson_title)->get();
         $prof=$lessons->pluck('professor_id');
-        $professors=Professor::whereIn("id",$prof)->get();
+        $professors=Professor::whereIn("id",[1,2])->get();
         return view("admin.collegian.insertProfessor",[
             "student_id"=>$student_id,
             "lesson_title"=>$lesson_title,
