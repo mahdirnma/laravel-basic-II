@@ -18,7 +18,7 @@
         <label for="password" class="mt-14 mb-4 text-white text-2xl" >Password</label>
         <input type="password" name="password" id="password" class="w-7/12 h-8 rounded-md outline-0 pl-4">
         <input type="submit" value="login" class="w-2/6 h-12 text-[rgb(34,98,198)] text-l hover:text-xl transition-all bg-white mt-20 cursor-pointer rounded-2xl">
-        <a href="{{route("signin")}}" class="text-white mt-7">don't have account?</a>
+        <a href="{{route("add.user")}}" class="text-white mt-7">don't have account?</a>
     </form>
 </div>
 </body>
