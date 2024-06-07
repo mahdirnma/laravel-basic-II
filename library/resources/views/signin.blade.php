@@ -38,7 +38,7 @@
             <input type="password" name="password" id="password" class="w-7/12 h-8 rounded-md outline-0 pl-4">
         </div>
         <input type="submit" value="signin" class="w-2/6 h-12 text-[rgb(34,98,198)] text-l hover:text-xl transition-all bg-white mt-8 cursor-pointer rounded-2xl">
-        <a href="{{route("check.user")}}" class="text-white mt-7">have account?</a>
+        <a href="{{route("login.show")}}" class="text-white mt-7">have account?</a>
     </form>
     @if($errors->any())
         <div class="absolute left-20 top-1/3 w-auto h-auto p-4 bg-pink-200 rounded-3xl">

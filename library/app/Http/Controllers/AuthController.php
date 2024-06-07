@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserLoginRequest;
 use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -25,10 +26,24 @@ class AuthController extends Controller
             "password"=>$password
         ]);
         if ($user){
-            session()->put("is_login","true");
+            session()->put("is_login",true);
             return to_route("dashboard");
         }else{
-            return to_route("dashboard");
+            return to_route("signin.show");
         }
+    }
+
+    public function login(StoreUserLoginRequest $request)
+    {
+        $username=$request->username;
+        $password=$request->password;
+        $user=User::where("username",$username)->where("password",$password);
+        if ($user->count()==1){
+            session()->put("is_login",true);
+            return to_route("dashboard");
+        }else{
+            return to_route("login.show");
+        }
+
     }
 }

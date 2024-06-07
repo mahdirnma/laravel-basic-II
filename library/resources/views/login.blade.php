@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="w-svw h-svh flex justify-center items-center">
-    <form action="" method="post" class="w-4/12 h-5/6 flex flex-col items-center bg-[rgb(34,98,198)] rounded-3xl pt-3">
+    <form action="{{route("login")}}" method="post" class="w-4/12 h-5/6 flex flex-col items-center bg-[rgb(34,98,198)] rounded-3xl pt-3">
         @csrf
         <h1 class="text-white text-5xl font-extrabold">Login</h1>
         <label for="username" class="mt-14 mb-4 text-white text-2xl" >Username</label>
@@ -18,8 +18,17 @@
         <label for="password" class="mt-14 mb-4 text-white text-2xl" >Password</label>
         <input type="password" name="password" id="password" class="w-7/12 h-8 rounded-md outline-0 pl-4">
         <input type="submit" value="login" class="w-2/6 h-12 text-[rgb(34,98,198)] text-l hover:text-xl transition-all bg-white mt-20 cursor-pointer rounded-2xl">
-        <a href="{{route("add.user")}}" class="text-white mt-7">don't have account?</a>
+        <a href="{{route("signin.show")}}" class="text-white mt-7">don't have account?</a>
     </form>
+    @if($errors->any())
+        <div class="absolute left-20 top-1/3 w-auto h-auto p-4 bg-pink-200 rounded-3xl">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li class="text-red-900">{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 </div>
 </body>
 </html>
