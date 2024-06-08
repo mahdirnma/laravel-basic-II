@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,5 @@ Route::get('/login',[UserController::class,"login"])->name("login.show");
 Route::post('/login',[AuthController::class,"login"])->name("login");
 Route::get('/signin',[UserController::class,"signin"])->name("signin.show");
 Route::post('/signin',[AuthController::class,"signin"])->name("signin");
+
+Route::get('/admin/books', [BookController::class,"index"])->name("books");
