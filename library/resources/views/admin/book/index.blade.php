@@ -4,7 +4,10 @@
 @endsection
 @section('content')
     <div class="w-full h-1/6"></div>
-    <h2 class="tracking-wide font-medium">ALL BOOKS</h2>
+    <div class="w-full h-auto flex justify-between">
+        <h2 class="tracking-wide font-medium">ALL BOOKS</h2>
+        <a href="{{route("books.add")}}" class="w-[3vw] h-[3vw] rounded-full flex justify-center pt-1 text-[rgb(34,98,198)] font-bold text-2xl bg-violet-100">+</a>
+    </div>
     <div class="max-h-96">
         <table class="w-full mt-10">
             <thead>
@@ -21,23 +24,23 @@
             </thead>
             <tbody>
             @foreach($books as $book)
-                <tr>
-                    <td>{{$book->id}}</td>
-                    <td class="text-center">{{$book->title}}</td>
-                    <td class="text-center">{{explode(" ",$book->release_date)[0]}}</td>
-                    <td class="text-center">{{$book->pages}}</td>
+                <tr class="border-b">
+                    <td class="py-2.5">{{$book->id}}</td>
+                    <td class="text-center py-2.5">{{$book->title}}</td>
+                    <td class="text-center py-2.5">{{explode(" ",$book->release_date)[0]}}</td>
+                    <td class="text-center py-2.5">{{$book->pages}}</td>
                     @foreach($writers as $writer)
-                        <td class="text-center">
+                        <td class="text-center py-2.5">
                             {{$writer->id==$book->writer_id?$writer->firstname." ".$writer->lastname:""}}
                         </td>
                     @endforeach
                     @foreach($categories as $category)
-                        <td class="text-center">
+                        <td class="text-center py-2.5">
                             {{$category->id==$book->category_id?$category->title:""}}
                         </td>
                     @endforeach
-                    <td class="text-center">update</td>
-                    <td class="text-center">delete</td>
+                    <td class="text-center py-2.5">update</td>
+                    <td class="text-center py-2.5">delete</td>
                 </tr>
             @endforeach
             </tbody>

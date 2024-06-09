@@ -23,3 +23,5 @@ Route::get('/signin',[UserController::class,"signin"])->name("signin.show");
 Route::post('/signin',[AuthController::class,"signin"])->name("signin");
 
 Route::get('/admin/books', [BookController::class,"index"])->name("books");
+Route::get('/admin/books/add', [BookController::class,"add"])->name("books.add");
+Route::post('/admin/books/create', [BookController::class,"create"])->name("books.create");
