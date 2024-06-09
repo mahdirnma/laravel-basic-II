@@ -27,3 +27,5 @@ Route::get('/admin/books/add', [BookController::class,"add"])->name("books.add")
 Route::post('/admin/books/create', [BookController::class,"create"])->name("books.create");
 Route::get('/admin/books/{book}/update', [BookController::class,"update"])->name("books.update");
 Route::put('/admin/books/{book}/edit', [BookController::class,"edit"])->name("books.edit");
+Route::get('/admin/books/{book}/delete', [BookController::class,"delete"])->name("books.delete");
+Route::delete('/admin/books/remove', [BookController::class,"remove"])->name("books.remove");

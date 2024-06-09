@@ -86,4 +86,12 @@ class BookController extends Controller
         ]);
         return to_route("books");
     }
+    public function delete(Book $book)
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        return view("admin.book.delete",[
+            "book"=>$book
+        ]);
+    }
 }
