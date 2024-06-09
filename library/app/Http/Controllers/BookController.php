@@ -94,4 +94,14 @@ class BookController extends Controller
             "book"=>$book
         ]);
     }
+
+    public function remove()
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        $id=request("id");
+        $book=Book::find($id);
+        $book->delete();
+        return to_route("books");
+    }
 }
