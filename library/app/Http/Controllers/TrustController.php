@@ -32,6 +32,8 @@ class TrustController extends Controller
 
     public function create(StoreTrustRequest $request)
     {
+        if (!(session()->has("is_login")))
+            return view('login');
         $firstname=$request->firstname;
         $lastname=$request->lastname;
         $borrow_date=$request->borrow_date;
@@ -47,4 +49,33 @@ class TrustController extends Controller
         return to_route("trusts");
     }
 
+    public function update(Trust $trust)
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        $books=Book::all();
+        return view("admin.trust.update",[
+            "books"=>$books,
+            "trust"=>$trust,
+        ]);
+    }
+    public function edit(Trust $trust,StoreTrustRequest $request)
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        $firstname=$request->firstname;
+        $lastname=$request->lastname;
+        $borrow_date=$request->borrow_date;
+        $giveback_date=$request->giveback_date;
+        $book=$request->book;
+        $selectTrust=Trust::find($trust->id);
+        $selectTrust->update([
+            "firstname"=>$firstname,
+            "lastname"=>$lastname,
+            "borrow_date"=>$borrow_date,
+            "giveback_date"=>$giveback_date,
+            "book_id"=>$book,
+        ]);
+        return to_route("trusts");
+    }
 }

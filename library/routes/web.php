@@ -47,5 +47,7 @@ Route::prefix("admin")->group(function (){
         Route::get('/trusts', "index")->name("trusts");
         Route::get('/trusts/add', "add")->name("trusts.add");
         Route::post('/trusts/create', "create")->name("trusts.create");
+        Route::get('/trusts/{trust}/update', "update")->name("trusts.update");
+        Route::put('/trusts/{trust}/edit', "edit")->name("trusts.edit");
     });
 });
