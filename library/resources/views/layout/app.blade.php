@@ -25,7 +25,7 @@
                     <li class="w-10/12 text-start text-white font-medium tracking-wide my-4 hover:text-blue-200"><a href="{{route('books')}}">books</a></li>
                     <li class="w-10/12 text-start text-white font-medium tracking-wide my-4 hover:text-blue-200"><a href="">writers</a></li>
                     <li class="w-10/12 text-start text-white font-medium tracking-wide my-4 hover:text-blue-200"><a href="">trusts</a></li>
-                    <li class="w-10/12 text-start text-white font-medium tracking-wide my-4 hover:text-blue-200"><a href="">categories</a></li>
+                    <li class="w-10/12 text-start text-white font-medium tracking-wide my-4 hover:text-blue-200"><a href="{{route('categories')}}">categories</a></li>
                 </ul>
             </nav>
         </div>

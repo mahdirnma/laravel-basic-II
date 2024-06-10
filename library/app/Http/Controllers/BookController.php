@@ -14,7 +14,7 @@ class BookController extends Controller
     {
         if (!(session()->has("is_login")))
             return view('login');
-        $books=Book::all();
+        $books=Book::where("is_active",true)->get();
         $categories=Category::all();
         $writers=Writer::all();
         return view("admin.book.index",[
@@ -101,7 +101,9 @@ class BookController extends Controller
             return view('login');
         $id=request("id");
         $book=Book::find($id);
-        $book->delete();
+        $book->update([
+            "is_active"=>false
+        ]);
         return to_route("books");
     }
 }
