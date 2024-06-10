@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("firstname");
             $table->string("lastname");
-            $table->integer("books_id");
+            $table->integer("book_id");
             $table->timestamp("borrow_date");
             $table->string("giveback_date");
             $table->boolean("is_active")->default(true);

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TrustController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,5 +42,8 @@ Route::prefix("admin")->group(function (){
         Route::put('/categories/{category}/edit', "edit")->name("categories.edit");
         Route::get('/categories/{category}/delete', "delete")->name("categories.delete");
         Route::delete('/categories/remove', "remove")->name("categories.remove");
+    });
+    Route::controller(TrustController::class)->group(function (){
+        Route::get('/trusts', "index")->name("trusts");
     });
 });

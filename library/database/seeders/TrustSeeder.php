@@ -16,7 +16,7 @@ class TrustSeeder extends Seeder
         Trust::create([
             'firstname' => 'sina',
             'lastname' => 'tabadar',
-            'books_id' => '1',
+            'book_id' => '1',
             'borrow_date' => '2024-5-12',
             'giveback_date' => '2024-8-12',
         ]);

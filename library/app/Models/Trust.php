@@ -11,7 +11,7 @@ class Trust extends Model
     protected $fillable=[
         "firstname",
         "lastname",
-        "books_id",
+        "book_id",
         "borrow_date",
         "giveback_date",
         "is_active",
