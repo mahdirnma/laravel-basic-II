@@ -23,10 +23,10 @@ class StoreBookRequest extends FormRequest
     {
         return [
             "title"=>"required",
-            "release_date"=>"required",
-            "pages"=>"required",
-            "writer"=>"required",
-            "category"=>"required",
+            "release_date"=>"required|date",
+            "pages"=>"required|numeric",
+            "writer"=>"required|numeric",
+            "category"=>"required|numeric",
         ];
     }
 }

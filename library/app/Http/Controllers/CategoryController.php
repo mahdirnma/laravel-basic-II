@@ -35,5 +35,25 @@ class CategoryController extends Controller
         ]);
         return to_route("categories");
     }
+    public function update(Category $category)
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+
+        return view("admin.category.update",[
+            "category"=>$category
+        ]);
+    }
+    public function edit(Category $category,StoreCategoryRequest $request)
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        $selectCategory=Category::find($category->id);
+        $title=$request->title;
+        $selectCategory->update([
+            "title"=>$title
+        ]);
+        return to_route("categories");
+    }
 
 }

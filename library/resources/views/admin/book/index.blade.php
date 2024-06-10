@@ -29,16 +29,16 @@
                     <td class="text-center py-2.5">{{$book->title}}</td>
                     <td class="text-center py-2.5">{{explode(" ",$book->release_date)[0]}}</td>
                     <td class="text-center py-2.5">{{$book->pages}}</td>
+                    <td class="text-center py-2.5">
                     @foreach($writers as $writer)
-                        <td class="text-center py-2.5">
                             {{$writer->id==$book->writer_id?$writer->firstname." ".$writer->lastname:""}}
-                        </td>
                     @endforeach
+                    </td>
+                    <td class="text-center py-2.5">
                     @foreach($categories as $category)
-                        <td class="text-center py-2.5">
                             {{$category->id==$book->category_id?$category->title:""}}
-                        </td>
                     @endforeach
+                    </td>
                     <td class="text-center py-2.5">
                         <form action="{{route("books.update",["book"=>$book->id])}}" method="get">
                             @csrf

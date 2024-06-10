@@ -24,7 +24,7 @@
                     <td class="py-2.5">{{$category->id}}</td>
                     <td class="text-center py-2.5">{{$category->title}}</td>
                     <td class="text-center py-2.5">
-                        <form action="{{--{{route("books.update",["book"=>$book->id])}}--}}" method="get">
+                        <form action="{{route("categories.update",["category"=>$category->id])}}" method="get">
                             @csrf
                             <input type="submit" value="update" class="text-red-900 cursor-pointer transition-all hover:font-bold">
                         </form>

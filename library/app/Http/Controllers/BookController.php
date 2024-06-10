@@ -67,7 +67,7 @@ class BookController extends Controller
             "book"=>$book
         ]);
     }
-    public function edit(StoreBookRequest $request)
+    public function edit(StoreBookRequest $request,Book $book)
     {
         if (!(session()->has("is_login")))
             return view('login');
@@ -76,8 +76,8 @@ class BookController extends Controller
         $pages=$request->pages;
         $writer=$request->writer;
         $category=$request->category;
-        $book=Book::find($request->book);
-        $book->update([
+        $selectBook=Book::find($book->id);
+        $selectBook->update([
             "title"=>$title,
             "release_date"=>$release_date,
             "pages"=>$pages,
