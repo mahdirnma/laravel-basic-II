@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('title')
-    books
+    delete book
 @endsection
 @section('content')
     <h1 class="text-center text-3xl text-[rgb(34,98,198)]">Are you sure about delete this book?</h1>

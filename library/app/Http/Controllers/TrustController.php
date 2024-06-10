@@ -78,4 +78,24 @@ class TrustController extends Controller
         ]);
         return to_route("trusts");
     }
+    public function delete(Trust $trust)
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        return view("admin.trust.delete",[
+            "trust"=>$trust
+        ]);
+    }
+    public function remove()
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        $id=request("id");
+        $trust=Trust::find($id);
+        $trust->update([
+            "is_active"=>false
+        ]);
+        return to_route("trusts");
+    }
+
 }

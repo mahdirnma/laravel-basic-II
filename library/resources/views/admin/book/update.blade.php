@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('title')
-update books
+update book
 @endsection
 @section('content')
 <form action="{{route("books.edit",["book"=>$book->id])}}" method="post" class="w-full h-full flex flex-col items-center">

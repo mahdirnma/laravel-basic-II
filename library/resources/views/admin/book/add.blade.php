@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('title')
-    add books
+    add book
 @endsection
 @section('content')
     <form action="{{route("books.create")}}" method="post" class="w-full h-full flex flex-col items-center">

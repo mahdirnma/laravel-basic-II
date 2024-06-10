@@ -49,5 +49,7 @@ Route::prefix("admin")->group(function (){
         Route::post('/trusts/create', "create")->name("trusts.create");
         Route::get('/trusts/{trust}/update', "update")->name("trusts.update");
         Route::put('/trusts/{trust}/edit', "edit")->name("trusts.edit");
+        Route::get('/trusts/{trust}/delete', "delete")->name("trusts.delete");
+        Route::delete('/trusts/remove', "remove")->name("trusts.remove");
     });
 });

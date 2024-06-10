@@ -1,9 +1,9 @@
 @extends('layout.app')
 @section('title')
-    categories
+    delete category
 @endsection
 @section('content')
-    <h1 class="text-center text-3xl text-[rgb(34,98,198)]">Are you sure about delete this book?</h1>
+    <h1 class="text-center text-3xl text-[rgb(34,98,198)]">Are you sure about delete this category?</h1>
     <h2 class="text-center text-2xl text-blue-800 my-14 font-bold">{{$category->title}}</h2>
     <form action="{{route("categories.remove")}}" method="post" class="flex justify-center">
         @csrf

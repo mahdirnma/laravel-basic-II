@@ -40,7 +40,7 @@
                         </form>
                     </td>
                     <td class="text-center py-2.5">
-                        <form action="{{--{{route("books.delete",["book"=>$book->id])}}--}}" method="get">
+                        <form action="{{route("trusts.delete",["trust"=>$trust->id])}}" method="get">
                             @csrf
                             <input type="submit" value="delete" class="text-red-900 cursor-pointer transition-all hover:font-bold">
                         </form>
