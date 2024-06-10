@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,24 @@ class CategoryController extends Controller
         return view("admin.category.index",[
             "categories"=>$categories,
         ]);
+    }
+
+    public function add()
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        return view("admin.category.add");
+    }
+
+    public function create(StoreCategoryRequest $request)
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        $title=$request->title;
+        Category::create([
+            "title"=>$title
+        ]);
+        return to_route("categories");
     }
 
 }

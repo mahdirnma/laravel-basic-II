@@ -6,7 +6,7 @@
     <div class="w-full h-1/6"></div>
     <div class="w-full h-auto flex justify-between">
         <h2 class="tracking-wide font-medium">ALL CATEGORIES</h2>
-        <a href="{{--{{route("books.add")}}--}}" class="w-[3vw] h-[3vw] rounded-full flex justify-center pt-1 text-[rgb(34,98,198)] font-bold text-2xl bg-violet-100">+</a>
+        <a href="{{route("categories.add")}}" class="w-[3vw] h-[3vw] rounded-full flex justify-center pt-1 text-[rgb(34,98,198)] font-bold text-2xl bg-violet-100">+</a>
     </div>
     <div class="max-h-96">
         <table class="w-full mt-10">

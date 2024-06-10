@@ -35,5 +35,7 @@ Route::prefix("admin")->group(function (){
     });
     Route::controller(CategoryController::class)->group(function (){
         Route::get('/categories', "index")->name("categories");
+        Route::get('/categories/add', "add")->name("categories.add");
+        Route::post('/categories/create', "create")->name("categories.create");
     });
 });
