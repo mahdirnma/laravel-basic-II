@@ -1,12 +1,12 @@
 @extends('layout.app')
 @section('title')
-    books
+    trusts
 @endsection
 @section('content')
     <div class="w-full h-1/6"></div>
     <div class="w-full h-auto flex justify-between">
-        <h2 class="tracking-wide font-medium">ALL BOOKS</h2>
-        <a href="{{--{{route("books.add")}}--}}" class="w-[3vw] h-[3vw] rounded-full flex justify-center pt-1 text-[rgb(34,98,198)] font-bold text-2xl bg-violet-100">+</a>
+        <h2 class="tracking-wide font-medium">ALL TRUSTS</h2>
+        <a href="{{route("trusts.add")}}" class="w-[3vw] h-[3vw] rounded-full flex justify-center pt-1 text-[rgb(34,98,198)] font-bold text-2xl bg-violet-100">+</a>
     </div>
     <div class="max-h-96">
         <table class="w-full mt-10">
@@ -25,7 +25,7 @@
             @foreach($trusts as $trust)
                 <tr class="border-b">
                     <td class="py-2.5">{{$trust->id}}</td>
-                    <td class="text-center py-2.5">{{$trust->firstname}} {{$trust->firstname}}</td>
+                    <td class="text-center py-2.5">{{$trust->firstname}} {{$trust->lastname}}</td>
                     <td class="text-center py-2.5">{{explode(" ",$trust->borrow_date)[0]}}</td>
                     <td class="text-center py-2.5">{{explode(" ",$trust->giveback_date)[0]}}</td>
                     <td class="text-center py-2.5">

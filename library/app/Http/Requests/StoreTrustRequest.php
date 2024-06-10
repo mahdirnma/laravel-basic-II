@@ -11,7 +11,7 @@ class StoreTrustRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StoreTrustRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "firstname"=>"required|alpha",
+            "lastname"=>"required|alpha",
+            "borrow_date"=>"required|date",
+            "giveback_date"=>"required|date",
+            "book"=>"required|numeric",
         ];
     }
 }
