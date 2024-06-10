@@ -39,5 +39,7 @@ Route::prefix("admin")->group(function (){
         Route::post('/categories/create', "create")->name("categories.create");
         Route::get('/categories/{category}/update', "update")->name("categories.update");
         Route::put('/categories/{category}/edit', "edit")->name("categories.edit");
+        Route::get('/categories/{category}/delete', "delete")->name("categories.delete");
+        Route::delete('/categories/remove', "remove")->name("categories.remove");
     });
 });

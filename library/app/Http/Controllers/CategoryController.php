@@ -55,5 +55,26 @@ class CategoryController extends Controller
         ]);
         return to_route("categories");
     }
+    public function delete(Category $category)
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+
+        return view("admin.category.delete",[
+            "category"=>$category
+        ]);
+    }
+    public function remove()
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        $id=request("id");
+        $category=Category::find($id);
+        $category->update([
+            "is_active"=>false
+        ]);
+        return to_route("categories");
+    }
+
 
 }
