@@ -11,7 +11,7 @@ class StoreWriterRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StoreWriterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "firstname"=>"required|alpha",
+            "lastname"=>"required|alpha",
+            "birth_date"=>"required|date",
+            "biography"=>"required|min:3",
+            "books"=>"required",
         ];
     }
 }

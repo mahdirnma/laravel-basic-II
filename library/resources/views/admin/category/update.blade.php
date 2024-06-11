@@ -7,7 +7,7 @@
         @csrf
         @method("put")
         <div class="min-w-80 flex justify-start items-center">
-            <label for="title" class="mr-4">title :</label>
+            <label for="title" class="mr-4 font-bold">title :</label>
             <input type="text" name="title" id="title" value="{{$category->title}}" class="border-2 border-[rgb(34,98,198)] px-3 py-0.5 rounded-full outline-0">
             @if($errors->has("title"))
                 @foreach($errors->get("title") as $err)

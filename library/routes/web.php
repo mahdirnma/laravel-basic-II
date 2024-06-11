@@ -54,6 +54,8 @@ Route::prefix("admin")->group(function (){
         Route::delete('/trusts/remove', "remove")->name("trusts.remove");
     });
     Route::controller(WriterController::class)->group(function (){
-        Route::get('/writer', "index")->name("writer");
+        Route::get('/writer', "index")->name("writers");
+        Route::get('/writer/add', "add")->name("writers.add");
+        Route::post('/writer/create', "create")->name("writers.create");
     });
 });

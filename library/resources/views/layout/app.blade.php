@@ -23,7 +23,7 @@
                 <ul class="w-full h-full flex flex-col items-end justify-center">
                     <li class="w-10/12 text-start text-white font-medium tracking-wide my-4 hover:text-blue-200"><a href="{{route('dashboard')}}">dashboard</a></li>
                     <li class="w-10/12 text-start text-white font-medium tracking-wide my-4 hover:text-blue-200"><a href="{{route('books')}}">books</a></li>
-                    <li class="w-10/12 text-start text-white font-medium tracking-wide my-4 hover:text-blue-200"><a href="{{route('writer')}}">writers</a></li>
+                    <li class="w-10/12 text-start text-white font-medium tracking-wide my-4 hover:text-blue-200"><a href="{{route('writers')}}">writers</a></li>
                     <li class="w-10/12 text-start text-white font-medium tracking-wide my-4 hover:text-blue-200"><a href="{{route('trusts')}}">trusts</a></li>
                     <li class="w-10/12 text-start text-white font-medium tracking-wide my-4 hover:text-blue-200"><a href="{{route('categories')}}">categories</a></li>
                 </ul>
