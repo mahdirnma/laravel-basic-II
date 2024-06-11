@@ -2,6 +2,13 @@
 @section('title')
     categories
 @endsection
+@section('search')
+    <form action="{{route("categories.search")}}" method="get" class="w-9/12 h-full flex items-end justify-between pb-3">
+        <label for="search"></label>
+        <input type="search" name="search" id="search" placeholder="search" class="outline-0 pl-10 rounded-full w-7/12 h-14 bg-gray-100">
+    </form>
+@endsection
+
 @section('content')
     <div class="w-full h-1/6"></div>
     <div class="w-full h-auto flex justify-between">

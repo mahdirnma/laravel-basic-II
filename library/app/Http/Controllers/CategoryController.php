@@ -18,6 +18,16 @@ class CategoryController extends Controller
         ]);
     }
 
+    public function search()
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        $search=request("search");
+        $categories=Category::where("is_active",true)->where("title","like","%".$search."%")->get();
+        return view("admin.category.index",[
+            "categories"=>$categories,
+        ]);
+    }
     public function add()
     {
         if (!(session()->has("is_login")))
