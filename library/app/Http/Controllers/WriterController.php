@@ -20,6 +20,24 @@ class WriterController extends Controller
             "writers"=>$writers
         ]);
     }
+    public function search()
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        $search=request("search");
+        $filter=request("book_filter");
+        if ($filter)
+            $writers=Writer::where("is_active",true)->where("books_id",$filter)->where("firstname","LIKE","%".$search."%")->get();
+        else
+            $writers=Writer::where("is_active",true)->where("firstname","LIKE","%".$search."%")->get();
+
+        $books=Book::all();
+        return view("admin.writer.index",[
+            "books"=>$books,
+            "writers"=>$writers
+        ]);
+    }
+
     public function add()
     {
         if (!(session()->has("is_login")))

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
+use App\Models\Category;
+use App\Models\Trust;
+use App\Models\Writer;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -10,7 +14,16 @@ class UserController extends Controller
     {
         if (!(session()->has("is_login")))
             return view('login');
-        return view('admin.index');
+        $books=Book::where("is_active",true)->count();
+        $categories=Category::where("is_active",true)->count();
+        $writers=Writer::where("is_active",true)->count();
+        $trusts=Trust::where("is_active",true)->count();
+        return view('admin.index',[
+            "books"=>$books,
+            "categories"=>$categories,
+            "writers"=>$writers,
+            "trusts"=>$trusts,
+        ]);
     }
     public function signin()
     {

@@ -2,6 +2,21 @@
 @section('title')
     books
 @endsection
+@section('search')
+<form action="{{route("books.search")}}" method="get" class="w-9/12 h-full flex items-end justify-between pb-3">
+    <label for="search"></label>
+    <input type="search" name="search" id="search" placeholder="search" class="outline-0 pl-10 rounded-full w-7/12 h-14 bg-gray-100">
+    <div class="h-full flex items-center pt-7">
+        <label for="category_filter">category:</label>
+        <select name="category_filter" id="category_filter" class="outline-0 bg-gray-100 ml-4 px-3 py-2  rounded-md text-gray-500 cursor-pointer">
+            <option value="">...</option>
+            @foreach($categories as $category)
+                <option value="{{$category->id}}" class="bg-white text-black cursor-pointer">{{$category->title}}</option>
+            @endforeach
+        </select>
+    </div>
+</form>
+@endsection
 @section('content')
     <div class="w-full h-1/6"></div>
     <div class="w-full h-auto flex justify-between">

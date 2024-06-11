@@ -20,6 +20,24 @@ class TrustController extends Controller
             "trusts"=>$trusts,
         ]);
     }
+    public function search()
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        $search=request("search");
+        $filter=request("book_filter");
+        if ($filter)
+            $trusts=Trust::where("is_active",true)->where("book_id",$filter)->where("firstname","LIKE","%".$search."%")->get();
+        else
+            $trusts=Trust::where("is_active",true)->where("firstname","LIKE","%".$search."%")->get();
+
+        $books=Book::all();
+        return view("admin.trust.index",[
+            "books"=>$books,
+            "trusts"=>$trusts,
+        ]);
+    }
+
     public function add()
     {
         if (!(session()->has("is_login")))

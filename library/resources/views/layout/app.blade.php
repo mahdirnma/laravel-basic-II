@@ -12,10 +12,7 @@
 <div class="w-svw h-svh">
     <div class="w-full h-[13%] flex items-center pl-16">
         <h1 class="text-3xl font-bold text-[rgb(34,98,198)]">Library</h1>
-        <form action="" method="get" class="w-7/12 h-full flex items-end justify-end pb-3">
-            <label for="search"></label>
-            <input type="search" name="search" id="search" placeholder="search" class="outline-0 pl-10 rounded-full w-9/12 h-14 bg-gray-100">
-        </form>
+        @yield('search')
     </div>
     <div class="w-full h-[87%] flex">
         <div class="w-2/12 h-full rounded-tr-[70px] bg-[rgb(34,98,198)]">

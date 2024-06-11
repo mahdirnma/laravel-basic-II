@@ -24,6 +24,25 @@ class BookController extends Controller
         ]);
     }
 
+    public function search()
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        $search=request("search");
+        $filter=request("category_filter");
+        if ($filter)
+            $books=Book::where("is_active",true)->where("category_id",$filter)->where("title","LIKE","%".$search."%")->get();
+        else
+            $books=Book::where("is_active",true)->where("title","LIKE","%".$search."%")->get();
+
+        $categories=Category::all();
+        $writers=Writer::all();
+        return view("admin.book.index",[
+            "books"=>$books,
+            "categories"=>$categories,
+            "writers"=>$writers
+        ]);
+    }
     public function add()
     {
         if (!(session()->has("is_login")))
