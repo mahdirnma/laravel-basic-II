@@ -44,6 +44,20 @@ class AuthController extends Controller
         }else{
             return to_route("login.show");
         }
+    }
 
+    public function logout()
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        session()->forget("is_login");
+        return to_route("login");
+    }
+
+    public function logoutGet()
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        return to_route('dashboard');
     }
 }

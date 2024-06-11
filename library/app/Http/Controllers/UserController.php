@@ -28,13 +28,13 @@ class UserController extends Controller
     public function signin()
     {
         if (session()->has("is_login"))
-            return view('admin.index');
+            return to_route('dashboard');
         return view('signin');
     }
     public function login()
     {
         if (session()->has("is_login"))
-            return view('admin.index');
+            return to_route('dashboard');
         return view('login');
     }
 }

@@ -25,6 +25,7 @@
                     <li class="w-10/12 text-start text-white font-medium tracking-wide my-4 hover:text-blue-200"><a href="{{route('categories')}}">categories</a></li>
                 </ul>
             </nav>
+            <a href="{{route("logout")}}" class="text-white ml-3 font-bold text-xl"><-- Logout</a>
         </div>
         <div class="w-10/12 h-full flex justify-center">
             <div class="w-11/12 h-full pt-5">
