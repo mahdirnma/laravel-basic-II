@@ -57,5 +57,7 @@ Route::prefix("admin")->group(function (){
         Route::get('/writer', "index")->name("writers");
         Route::get('/writer/add', "add")->name("writers.add");
         Route::post('/writer/create', "create")->name("writers.create");
+        Route::get('/writer/{writer}/update', "update")->name("writers.update");
+        Route::put('/writer/{writer}/edit', "edit")->name("writers.edit");
     });
 });

@@ -36,7 +36,7 @@
                     @endforeach
                     </td>
                     <td class="text-center py-2.5">
-                        <form action="{{--{{route("books.update",["book"=>$book->id])}}--}}" method="get">
+                        <form action="{{route("writers.update",["writer"=>$writer->id])}}" method="get">
                             @csrf
                             <input type="submit" value="update" class="text-red-900 cursor-pointer transition-all hover:font-bold">
                         </form>

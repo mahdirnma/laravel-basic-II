@@ -46,5 +46,32 @@ class WriterController extends Controller
         ]);
         return to_route("writers");
     }
+    public function update(Writer $writer)
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        $books=Book::all();
+        return view("admin.writer.update",[
+            "writer"=>$writer,
+            "books"=>$books
+        ]);
+    }
 
+    public function edit(Writer $writer,StoreWriterRequest $request)
+    {
+        $firstname=$request->firstname;
+        $lastname=$request->lastname;
+        $biography=$request->biography;
+        $birth_date=$request->birth_date;
+        $books=implode(",",$request->books);
+        $wr=Writer::find($writer->id);
+        $wr->update([
+            "firstname"=>$firstname,
+            "lastname"=>$lastname,
+            "biography"=>$biography,
+            "birth_date"=>$birth_date,
+            "books_id"=>$books,
+        ]);
+        return to_route("writers");
+    }
 }
