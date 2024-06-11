@@ -20,7 +20,7 @@ class BookController extends Controller
         return view("admin.book.index",[
             "books"=>$books,
             "categories"=>$categories,
-            "writers"=>$writers
+            "writer"=>$writers
         ]);
     }
 
@@ -32,7 +32,7 @@ class BookController extends Controller
         $writers=Writer::all();
         return view("admin.book.add",[
             "categories"=>$categories,
-            "writers"=>$writers
+            "writer"=>$writers
         ]);
 
     }
@@ -63,7 +63,7 @@ class BookController extends Controller
         $writers=Writer::all();
         return view("admin.book.update",[
             "categories"=>$categories,
-            "writers"=>$writers,
+            "writer"=>$writers,
             "book"=>$book
         ]);
     }

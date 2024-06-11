@@ -5,6 +5,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TrustController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WriterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,5 +52,8 @@ Route::prefix("admin")->group(function (){
         Route::put('/trusts/{trust}/edit', "edit")->name("trusts.edit");
         Route::get('/trusts/{trust}/delete', "delete")->name("trusts.delete");
         Route::delete('/trusts/remove', "remove")->name("trusts.remove");
+    });
+    Route::controller(WriterController::class)->group(function (){
+        Route::get('/writer', "index")->name("writer");
     });
 });
