@@ -32,6 +32,8 @@ class WriterController extends Controller
     }
     public function create(StoreWriterRequest $request)
     {
+        if (!(session()->has("is_login")))
+            return view('login');
         $firstname=$request->firstname;
         $lastname=$request->lastname;
         $biography=$request->biography;
@@ -59,6 +61,8 @@ class WriterController extends Controller
 
     public function edit(Writer $writer,StoreWriterRequest $request)
     {
+        if (!(session()->has("is_login")))
+            return view('login');
         $firstname=$request->firstname;
         $lastname=$request->lastname;
         $biography=$request->biography;
@@ -71,6 +75,25 @@ class WriterController extends Controller
             "biography"=>$biography,
             "birth_date"=>$birth_date,
             "books_id"=>$books,
+        ]);
+        return to_route("writers");
+    }
+    public function delete(Writer $writer)
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        return view("admin.writer.delete",[
+            "writer"=>$writer,
+        ]);
+    }
+    public function remove()
+    {
+        if (!(session()->has("is_login")))
+            return view('login');
+        $id=request("id");
+        $writer=Writer::find($id);
+        $writer->update([
+            "is_active"=>false
         ]);
         return to_route("writers");
     }

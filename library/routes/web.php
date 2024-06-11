@@ -59,5 +59,7 @@ Route::prefix("admin")->group(function (){
         Route::post('/writer/create', "create")->name("writers.create");
         Route::get('/writer/{writer}/update', "update")->name("writers.update");
         Route::put('/writer/{writer}/edit', "edit")->name("writers.edit");
+        Route::get('/writer/{writer}/delete', "delete")->name("writers.delete");
+        Route::delete('/writer/remove', "remove")->name("writers.remove");
     });
 });
